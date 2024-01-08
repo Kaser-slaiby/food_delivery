@@ -22,7 +22,13 @@ class _MainFoodPageState extends State<MainFoodPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
-                    children: [BigText(text: 'Syria'), Text("City")],
+                    children: [
+                      BigText(
+                        text: 'Syria',
+                        color: Colors.cyan,
+                      ),
+                      Text("City")
+                    ],
                   ),
                   Container(
                     width: 45,
@@ -30,7 +36,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
                     child: Icon(Icons.search, color: Colors.white),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
-                      color: Colors.grey,
+                      color: Colors.cyanAccent,
                     ),
                   )
                 ],
