@@ -41,11 +41,11 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           alignment: Alignment.bottomCenter,
           child: Container(
             height: 140,
-            margin: EdgeInsets.only(left: 40, right: 40, bottom: 15),
+            margin: EdgeInsets.only(left: 30, right: 30, bottom: 15),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30), color: Colors.white),
           ),
-        )
+        ),
       ],
     );
   }
