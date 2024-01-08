@@ -18,6 +18,8 @@ class BigText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
+      // maxLines for delete overflow, 1 = line
+      maxLines: 1,
       overflow: overflow,
       style: TextStyle(
           color: color,
