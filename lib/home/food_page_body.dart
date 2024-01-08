@@ -21,14 +21,20 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   }
 
   Widget _buildPageItem(int index) {
-    return Container(
-      height: 220,
-      margin: EdgeInsets.only(left: 5, right: 5),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
-          color: index.isEven ? Color(0xFF69c5df) : Color(0xFF9294cc),
-          image: DecorationImage(
-              fit: BoxFit.cover, image: AssetImage("assets/image/burger.png"))),
+    // Add Stake for height Container
+    return Stack(
+      children: [
+        Container(
+          height: 220,
+          margin: EdgeInsets.only(left: 5, right: 5),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              color: index.isEven ? Color(0xFF69c5df) : Color(0xFF9294cc),
+              image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage("assets/image/pizza.jpeg"))),
+        )
+      ],
     );
   }
 }

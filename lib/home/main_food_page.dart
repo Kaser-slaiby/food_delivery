@@ -48,7 +48,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
                       child: Icon(Icons.search, color: Colors.white),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        color: Colors.cyanAccent,
+                        color: Colors.black26,
                       ),
                     )
                   ],
