@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/widgets/%20big_text.dart';
+import 'package:food_delivery/widgets/icon_and_text_widget.dart';
 import 'package:food_delivery/widgets/small_text.dart';
 
 class FoodPageBody extends StatefulWidget {
@@ -54,25 +55,57 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   BigText(text: "Chinese Side"),
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Row(
                     children: [
                       Wrap(
-                        children: List.generate(5, (index) {return Icon(Icons.star, color: Colors.cyan,
-                        size: 15,);}),
+                        children: List.generate(5, (index) {
+                          return Icon(
+                            Icons.star,
+                            color: Colors.cyan,
+                            size: 15,
+                          );
+                        }),
                       ),
-                      SizedBox(width: 10,),
+                      SizedBox(
+                        width: 10,
+                      ),
                       SmallText(text: "4.5"),
-                      SizedBox(width: 10,),
+                      SizedBox(
+                        width: 10,
+                      ),
                       SmallText(text: "1287"),
-                      SizedBox(width: 10,),
+                      SizedBox(
+                        width: 10,
+                      ),
                       SmallText(text: "comments"),
                     ],
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Row(
                     children: [
-
+                      IconAndTextWidget(
+                          icon: Icons.circle_sharp,
+                          text: "Normal",
+                          iconColor: Colors.orangeAccent),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      IconAndTextWidget(
+                          icon: Icons.location_on,
+                          text: "1.7KM",
+                          iconColor: Colors.cyanAccent),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      IconAndTextWidget(
+                          icon: Icons.access_time_rounded,
+                          text: "32min",
+                          iconColor: Colors.deepOrangeAccent),
                     ],
                   )
                 ],
