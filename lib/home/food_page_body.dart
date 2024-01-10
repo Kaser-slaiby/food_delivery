@@ -12,6 +12,7 @@ class FoodPageBody extends StatefulWidget {
 
 class _FoodPageBodyState extends State<FoodPageBody> {
   PageController pageController = PageController(viewportFraction: 0.90);
+  
 
   @override
   Widget build(BuildContext context) {
