@@ -10,11 +10,13 @@ class FoodPageBody extends StatefulWidget {
 }
 
 class _FoodPageBodyState extends State<FoodPageBody> {
-  PageController pageController = PageController(viewportFraction: 0.85);
+  PageController pageController = PageController(viewportFraction: 0.90);
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      // color for test
+      color: Colors.amber,
       height: 320,
       child: PageView.builder(
           controller: pageController,
