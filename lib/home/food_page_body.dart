@@ -11,7 +11,7 @@ class FoodPageBody extends StatefulWidget {
 }
 
 class _FoodPageBodyState extends State<FoodPageBody> {
-  PageController pageController = PageController(viewportFraction: 0.90);
+  PageController pageController = PageController(viewportFraction: 0.87);
   var _currPageValue = 0.0;
   double _scalFactor = 0.8;
   double _height = 220;
@@ -80,10 +80,10 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       child: Stack(
         children: [
           Container(
-            height: 220,
+            height: 200,
             margin: EdgeInsets.only(left: 10, right: 10),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(35 ),
                 color: index.isEven ? Color(0xFF69c5df) : Color(0xFF9294cc),
                 image: DecorationImage(
                     fit: BoxFit.cover,
@@ -92,10 +92,25 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 120,
-              margin: EdgeInsets.only(left: 30, right: 30, bottom: 25),
+              height: 110,
+              margin: EdgeInsets.only(left: 30, right: 30, bottom: 35),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30), color: Colors.white),
+                  borderRadius: BorderRadius.circular(30), color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey,
+                  blurRadius: 5.0,
+                  offset: Offset(0,5)
+                ),
+                // BoxShadow(
+                //     color: Colors.white,
+                //     offset: Offset(-5,0)
+                // ),
+                // BoxShadow(
+                //     color: Colors.green,
+                //     offset: Offset(5,0)
+                // )
+              ]),
               child: Container(
                 padding: EdgeInsets.only(top: 15, left: 15, right: 15),
                 child: Column(
@@ -131,7 +146,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                       ],
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 10,
                     ),
                     Row(
                       children: [
