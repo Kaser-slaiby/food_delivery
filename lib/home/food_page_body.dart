@@ -40,6 +40,12 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     );
   }
 
+  //To clear the value when you leave
+  @override
+  void dispose() {
+    pageController.dispose();
+  }
+
   Widget _buildPageItem(int index) {
     // Add Stake for height Container
     return Stack(
