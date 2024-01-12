@@ -13,7 +13,7 @@ class BigText extends StatelessWidget {
     this.color = const Color(0xFF332d2b),
     required this.text,
     this.overflow = TextOverflow.ellipsis,
-    this.size = 20,
+    this.size = 0,
   });
 
   @override
@@ -27,7 +27,7 @@ class BigText extends StatelessWidget {
           color: color,
           fontFamily: 'Roboto',
           fontWeight: FontWeight.w700,
-          fontSize: Dimensions.font20),
+          fontSize: size==0?Dimensions.font20:size),
     );
   }
 }
