@@ -48,11 +48,11 @@ class _MainFoodPageState extends State<MainFoodPage> {
                       ],
                     ),
                     Container(
-                      width: 45,
-                      height: 45,
+                      width: Dimensions.width45,
+                      height: Dimensions.height45,
                       child: Icon(Icons.search, color: Colors.white),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(Dimensions.radius15),
                         color: Colors.black26,
                       ),
                     )

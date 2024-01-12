@@ -23,6 +23,7 @@ class Dimensions{
   static double pageViewTextContainer = screenWidth/3.73;
 
   //dynamic height890 padding and margin
+  static double height5 = screenHeight/178;
   static double height10 = screenHeight/89;
   static double height15 = screenHeight/95.33;
   static double height30 = screenHeight/29.666;
@@ -30,14 +31,18 @@ class Dimensions{
 
 
   //dynamic width411 padding and margin
+  static double width5 = screenHeight/178;
   static double width10 = screenHeight/89;
   static double width15 = screenHeight/95.33;
   static double width20 = screenHeight/95.33;
-  static double width30 = screenHeight/19.777;
+  static double width30 = screenHeight/29.666;
+  static double width45 = screenHeight/19.777;
 
 
   static double font20 = screenHeight/44.54;
-  static double radius30 = screenHeight/29.666;
-  static double radius35 = screenHeight/25.428;
+  static double radius30 = screenHeight/28.13;
+  static double radius35 = screenHeight/24.13;
+  static double radius15 = screenHeight/95.27;
+  static double iconSize = screenHeight/35.17;
 
 }
