@@ -46,17 +46,46 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 return _buildPageItem(position);
               }),
         ),
-    //dots
-    new DotsIndicator(
-    dotsCount: 5,
-    position: _currPageValue,
-    decorator: DotsDecorator(
-      activeColor: Colors.cyanAccent,
-    spacing: const EdgeInsets.all(10.0),
-      // color: Colors.cyan
-    ),
-    ),
+        //dots
+        new DotsIndicator(
+          dotsCount: 5,
+          position: _currPageValue,
+          decorator: DotsDecorator(
+            activeColor: Colors.cyanAccent,
+            spacing: const EdgeInsets.all(10.0),
+            // color: Colors.cyan
+          ),
+        ),
         //Popular text
+        SizedBox(
+          height: Dimensions.height30,
+        ),
+        Container(
+          margin: EdgeInsets.only(left: Dimensions.width20),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              BigText(text: "Popular"),
+              SizedBox(
+                width: Dimensions.width10,
+              ),
+              Container(
+                margin: const EdgeInsets.only(bottom: 3),
+                child: BigText(
+                  text: ".",
+                  color: Colors.black26,
+                ),
+              ),
+              SizedBox(
+                width: Dimensions.width10,
+              ),
+              Container(
+                margin: const EdgeInsets.only(bottom: 5),
+                child: SmallText(text: "Food menu"),
+              )
+            ],
+          ),
+        )
       ],
     );
   }
@@ -100,9 +129,10 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         children: [
           Container(
             height: Dimensions.pageViewContainer,
-            margin: EdgeInsets.only(left: Dimensions.width10, right: Dimensions.width10),
+            margin: EdgeInsets.only(
+                left: Dimensions.width10, right: Dimensions.width10),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(Dimensions.radius35 ),
+                borderRadius: BorderRadius.circular(Dimensions.radius35),
                 color: index.isEven ? Color(0xFF69c5df) : Color(0xFF9294cc),
                 image: DecorationImage(
                     fit: BoxFit.cover,
@@ -112,26 +142,30 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             alignment: Alignment.bottomCenter,
             child: Container(
               height: Dimensions.pageViewTextContainer,
-              margin: EdgeInsets.only(left: Dimensions.width30, right: Dimensions.width30, bottom: Dimensions.height30),
+              margin: EdgeInsets.only(
+                  left: Dimensions.width30,
+                  right: Dimensions.width30,
+                  bottom: Dimensions.height30),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(Dimensions.radius30), color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey,
-                  blurRadius: 5.0,
-                  offset: Offset(0,5)
-                ),
-                // BoxShadow(
-                //     color: Colors.white,
-                //     offset: Offset(-5,0)
-                // ),
-                // BoxShadow(
-                //     color: Colors.green,
-                //     offset: Offset(5,0)
-                // )
-              ]),
+                  borderRadius: BorderRadius.circular(Dimensions.radius30),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.grey,
+                        blurRadius: 5.0,
+                        offset: Offset(0, 5)),
+                    // BoxShadow(
+                    //     color: Colors.white,
+                    //     offset: Offset(-5,0)
+                    // ),
+                    // BoxShadow(
+                    //     color: Colors.green,
+                    //     offset: Offset(5,0)
+                    // )
+                  ]),
               child: Container(
-                padding: EdgeInsets.only(top: Dimensions.height15, left: 15, right: 15),
+                padding: EdgeInsets.only(
+                    top: Dimensions.height15, left: 15, right: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
