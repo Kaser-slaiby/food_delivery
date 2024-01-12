@@ -87,16 +87,19 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           ),
         ),
         //list of food and images
+        //images section
         Container(
           height: 900,
           child: ListView.builder(
               physics: NeverScrollableScrollPhysics(),
               // shrinkWrap: true,
-              itemCount: 10,
+              itemCount: 6,
               itemBuilder: (context, index) {
                 return Container(
                   margin: EdgeInsets.only(
-                      left: Dimensions.width15, right: Dimensions.width10),
+                      left: Dimensions.width15,
+                      right: Dimensions.width15,
+                      bottom: Dimensions.height10),
                   child: Row(
                     children: [
                       Container(
@@ -107,7 +110,29 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                               BorderRadius.circular(Dimensions.radius20),
                           color: Colors.white24,
                           image: DecorationImage(
+                            fit: BoxFit.cover,
                             image: AssetImage("assets/image/Hamburger.jpg"),
+                          ),
+                        ),
+                      ),
+                      //text container
+                      Expanded(
+                        child: Container(
+                          height: 100,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(Dimensions.radius20),
+                              bottomRight: Radius.circular(Dimensions.radius20),
+                            ),
+                            color: Colors.white,
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.only(left: Dimensions.width10),
+                            child: Column(
+                              children: [
+                                BigText(text: "Nutritious fruit meal in china"),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -115,7 +140,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                   ),
                 );
               }),
-        )
+        ),
       ],
     );
   }
