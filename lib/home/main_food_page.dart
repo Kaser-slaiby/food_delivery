@@ -1,8 +1,12 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:food_delivery/widgets/%20big_text.dart';
 import 'package:food_delivery/widgets/small_text.dart';
 
 import 'food_page_body.dart';
+import '../utils/dimensions.dart';
+
 
 class MainFoodPage extends StatefulWidget {
   const MainFoodPage({super.key});
@@ -22,8 +26,8 @@ class _MainFoodPageState extends State<MainFoodPage> {
           children: [
             Container(
               child: Container(
-                margin: EdgeInsets.only(top: 45, bottom: 15),
-                padding: EdgeInsets.only(left: 20, right: 20),
+                margin: EdgeInsets.only(top: Dimensions.height45, bottom: Dimensions.height15),
+                padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
