@@ -33,6 +33,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      //slider secthion
       children: [
         Container(
           // color for test
@@ -45,6 +46,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 return _buildPageItem(position);
               }),
         ),
+    //dots
     new DotsIndicator(
     dotsCount: 5,
     position: _currPageValue,
@@ -53,7 +55,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     spacing: const EdgeInsets.all(10.0),
       // color: Colors.cyan
     ),
-    )
+    ),
+        //Popular text
       ],
     );
   }
