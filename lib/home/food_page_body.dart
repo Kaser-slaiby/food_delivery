@@ -88,59 +88,91 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         ),
         //list of food and images
         //images section
-        Container(
-          height: 900,
-          child: ListView.builder(
-              physics: NeverScrollableScrollPhysics(),
-              // shrinkWrap: true,
-              itemCount: 6,
-              itemBuilder: (context, index) {
-                return Container(
-                  margin: EdgeInsets.only(
-                      left: Dimensions.width15,
-                      right: Dimensions.width15,
-                      bottom: Dimensions.height10),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 120,
-                        height: 120,
+        ListView.builder(
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return Container(
+                margin: EdgeInsets.only(
+                    left: Dimensions.width15,
+                    right: Dimensions.width15,
+                    bottom: Dimensions.height10),
+                child: Row(
+                  children: [
+                    Container(
+                      height: Dimensions.listViewImgSize,
+                      width: Dimensions.listViewImgSize,
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.circular(Dimensions.radius15),
+                        color: Colors.white24,
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/image/Hamburger.jpg"),
+                        ),
+                      ),
+                    ),
+                    //text container
+                    Expanded(
+                      child: Container(
+                        height: Dimensions.listViewTextContSize,
                         decoration: BoxDecoration(
-                          borderRadius:
-                              BorderRadius.circular(Dimensions.radius20),
-                          color: Colors.white24,
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage("assets/image/Hamburger.jpg"),
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(Dimensions.radius20),
+                            bottomRight: Radius.circular(Dimensions.radius20),
+                          ),
+                          color: Colors.white,
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              left: Dimensions.width10,
+                              right: Dimensions.width10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              BigText(text: "Nutritious fruit meal in china"),
+                              SizedBox(
+                                height: Dimensions.height10,
+                              ),
+                              SmallText(text: "With Chinese characteristics"),
+                              SizedBox(
+                                height: Dimensions.height10,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  IconAndTextWidget(
+                                      icon: Icons.circle_sharp,
+                                      text: "Normal",
+                                      iconColor: Colors.orangeAccent),
+                                  // SizedBox(
+                                  //   width: 20,
+                                  // ),
+                                  IconAndTextWidget(
+                                      icon: Icons.location_on,
+                                      text: "1.7KM",
+                                      iconColor: Colors.cyanAccent),
+                                  // SizedBox(
+                                  //   width: 20,
+                                  // ),
+                                  IconAndTextWidget(
+                                      icon: Icons.access_time_rounded,
+                                      text: "32min",
+                                      iconColor: Colors.deepOrangeAccent),
+                                ],
+                              ),
+                            ],
                           ),
                         ),
                       ),
-                      //text container
-                      Expanded(
-                        child: Container(
-                          height: 100,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(Dimensions.radius20),
-                              bottomRight: Radius.circular(Dimensions.radius20),
-                            ),
-                            color: Colors.white,
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.only(left: Dimensions.width10),
-                            child: Column(
-                              children: [
-                                BigText(text: "Nutritious fruit meal in china"),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              }),
-        ),
+                    ),
+                  ],
+                ),
+              );
+            }),
       ],
     );
   }
@@ -220,7 +252,9 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                   ]),
               child: Container(
                 padding: EdgeInsets.only(
-                    top: Dimensions.height15, left: 15, right: 15),
+                    top: Dimensions.height15,
+                    left: Dimensions.width15,
+                    right: Dimensions.width15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -278,7 +312,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                             text: "32min",
                             iconColor: Colors.deepOrangeAccent),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
