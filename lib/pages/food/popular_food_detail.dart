@@ -36,6 +36,22 @@ class PopularFoodDetail extends StatelessWidget {
                 AppIcon(icon: Icons.shopping_cart_outlined)
               ],
             ),
+          ),
+          Positioned(
+            left: 0,
+            right: 0,
+            top: Dimensions.popularFoodImgSize,
+            child: Container(
+              padding: EdgeInsets.only(
+                left: Dimensions.width20,
+                right: Dimensions.width20,
+                top: Dimensions.height20,
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(Dimensions.radius20),
+                color: Colors.deepOrangeAccent,
+              ),
+            ),
           )
         ],
       ),
