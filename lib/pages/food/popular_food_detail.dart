@@ -11,6 +11,7 @@ class PopularFoodDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           Positioned(
@@ -74,6 +75,71 @@ class PopularFoodDetail extends StatelessWidget {
             ),
           )
         ],
+      ),
+      bottomNavigationBar: Container(
+        height: 120,
+        padding: EdgeInsets.only(
+          top: Dimensions.height30,
+          bottom: Dimensions.height30,
+          right: Dimensions.width20,
+          left: Dimensions.width20,
+        ),
+        decoration: BoxDecoration(
+          color: Colors.black12,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(Dimensions.radius20 * 2),
+            topRight: Radius.circular(Dimensions.radius20 * 2),
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Container(
+              padding: EdgeInsets.only(
+                top: Dimensions.height15,
+                bottom: Dimensions.height15,
+                left: Dimensions.width15,
+                right: Dimensions.width15,
+              ),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(
+                  Dimensions.radius20,
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Icon(
+                    Icons.remove,
+                    color: Colors.black,
+                  ),
+                  BigText(text: "0"),
+                  Icon(
+                    Icons.add,
+                  )
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(
+                top: Dimensions.height15,
+                bottom: Dimensions.height15,
+                left: Dimensions.width15,
+                right: Dimensions.width15,
+              ),
+              child: BigText(
+                text: "\$10 | Add To Cart",
+              ),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(
+                  Dimensions.radius20,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
