@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/utils/dimensions.dart';
+import 'package:food_delivery/widgets/%20big_text.dart';
 import 'package:food_delivery/widgets/app_column.dart';
 
 import '../../widgets/app_icon.dart';
@@ -56,8 +57,19 @@ class PopularFoodDetail extends StatelessWidget {
                 ),
                 color: Colors.white,
               ),
-              child: AppCloumn(
-                text: "Chinese Side",
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AppCloumn(
+                    text: "Chinese Side",
+                  ),
+                  SizedBox(
+                    height: Dimensions.height30,
+                  ),
+                  BigText(
+                    text: "Introduce",
+                  )
+                ],
               ),
             ),
           )
