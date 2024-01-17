@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/widgets/small_text.dart';
 
-import ' big_text.dart';
 import '../utils/dimensions.dart';
+import 'big_text.dart';
 import 'icon_and_text_widget.dart';
 
 class AppCloumn extends StatelessWidget {

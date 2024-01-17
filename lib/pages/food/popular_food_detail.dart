@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/utils/dimensions.dart';
-import 'package:food_delivery/widgets/%20big_text.dart';
 import 'package:food_delivery/widgets/app_column.dart';
 
 import '../../widgets/app_icon.dart';
+import '../../widgets/big_text.dart';
 
 class PopularFoodDetail extends StatelessWidget {
   const PopularFoodDetail({super.key});
@@ -22,14 +22,14 @@ class PopularFoodDetail extends StatelessWidget {
               height: Dimensions.popularFoodImgSize,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fill,
                   image: AssetImage("assets/image/pizza.jpeg"),
                 ),
               ),
             ),
           ),
           Positioned(
-            top: Dimensions.height30,
+            top: Dimensions.height45,
             left: Dimensions.width20,
             right: Dimensions.width20,
             child: Row(
@@ -73,46 +73,46 @@ class PopularFoodDetail extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
       bottomNavigationBar: Container(
-        height: 120,
+        height: Dimensions.bottomHeightBar,
         padding: EdgeInsets.only(
-          top: Dimensions.height30,
-          bottom: Dimensions.height30,
-          right: Dimensions.width20,
-          left: Dimensions.width20,
+          top: Dimensions.height5,
+          bottom: Dimensions.height5,
+          right: Dimensions.width30,
+          left: Dimensions.width30,
         ),
         decoration: BoxDecoration(
-          color: Colors.black12,
+          color: Color(0xFFECEFF1),
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(Dimensions.radius20 * 2),
-            topRight: Radius.circular(Dimensions.radius20 * 2),
+            topLeft: Radius.circular(Dimensions.radius15 * 2),
+            topRight: Radius.circular(Dimensions.radius15 * 2),
           ),
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
               padding: EdgeInsets.only(
-                top: Dimensions.height15,
-                bottom: Dimensions.height15,
+                top: Dimensions.height5,
+                bottom: Dimensions.height5,
                 left: Dimensions.width15,
                 right: Dimensions.width15,
               ),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(
-                  Dimensions.radius20,
+                  Dimensions.radius15,
                 ),
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Icon(
                     Icons.remove,
-                    color: Colors.black,
+                    // color: Colors.black87,
                   ),
                   BigText(text: "0"),
                   Icon(
@@ -123,8 +123,8 @@ class PopularFoodDetail extends StatelessWidget {
             ),
             Container(
               padding: EdgeInsets.only(
-                top: Dimensions.height15,
-                bottom: Dimensions.height15,
+                top: Dimensions.height5,
+                bottom: Dimensions.height5,
                 left: Dimensions.width15,
                 right: Dimensions.width15,
               ),
@@ -134,7 +134,7 @@ class PopularFoodDetail extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(
-                  Dimensions.radius20,
+                  Dimensions.radius15,
                 ),
               ),
             ),
