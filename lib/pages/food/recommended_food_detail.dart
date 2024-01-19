@@ -188,8 +188,8 @@ class RecommendedFoodDetail extends StatelessWidget {
         children: [
           Container(
             padding: EdgeInsets.only(
-              left: Dimensions.width20 * 3,
-              right: Dimensions.width20 * 3,
+              left: Dimensions.width20 * 4,
+              right: Dimensions.width20 * 4,
               top: Dimensions.height10,
               bottom: Dimensions.height10,
             ),
