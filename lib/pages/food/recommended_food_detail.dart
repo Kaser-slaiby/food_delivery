@@ -186,21 +186,90 @@ class RecommendedFoodDetail extends StatelessWidget {
       bottomNavigationBar: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              AppIcon(
-                icon: Icons.remove,
-                backgroundColor: Colors.cyan,
-                iconColor: Colors.white,
+          Container(
+            padding: EdgeInsets.only(
+              left: Dimensions.width20 * 3,
+              right: Dimensions.width20 * 3,
+              top: Dimensions.height10,
+              bottom: Dimensions.height10,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AppIcon(
+                  iconSize: Dimensions.iconSize24,
+                  icon: Icons.remove,
+                  backgroundColor: Colors.cyan,
+                  iconColor: Colors.white,
+                ),
+                BigText(
+                  text: "\$12.88 " + " X " + " 0 ",
+                  size: Dimensions.font26,
+                ),
+                AppIcon(
+                  iconSize: Dimensions.iconSize24,
+                  icon: Icons.add,
+                  backgroundColor: Colors.cyan,
+                  iconColor: Colors.white,
+                ),
+              ],
+            ),
+          ),
+          Container(
+            height: Dimensions.bottomHeightBar,
+            padding: EdgeInsets.only(
+              top: Dimensions.height5,
+              bottom: Dimensions.height5,
+              right: Dimensions.width30,
+              left: Dimensions.width30,
+            ),
+            decoration: BoxDecoration(
+              color: Color(0xFFECEFF1),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(Dimensions.radius15 * 2),
+                topRight: Radius.circular(Dimensions.radius15 * 2),
               ),
-              AppIcon(
-                icon: Icons.add,
-                backgroundColor: Colors.cyan,
-                iconColor: Colors.white,
-              ),
-            ],
-          )
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                    padding: EdgeInsets.only(
+                      top: Dimensions.height5,
+                      bottom: Dimensions.height5,
+                      left: Dimensions.width15,
+                      right: Dimensions.width15,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(
+                        Dimensions.radius15,
+                      ),
+                    ),
+                    child: Icon(
+                      Icons.favorite,
+                      color: Colors.redAccent,
+                    )),
+                Container(
+                  padding: EdgeInsets.only(
+                    top: Dimensions.height5,
+                    bottom: Dimensions.height5,
+                    left: Dimensions.width15,
+                    right: Dimensions.width15,
+                  ),
+                  child: BigText(
+                    text: "\$10 | Add To Cart",
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(
+                      Dimensions.radius15,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
