@@ -183,6 +183,26 @@ class RecommendedFoodDetail extends StatelessWidget {
           ),
         ],
       ),
+      bottomNavigationBar: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              AppIcon(
+                icon: Icons.remove,
+                backgroundColor: Colors.cyan,
+                iconColor: Colors.white,
+              ),
+              AppIcon(
+                icon: Icons.add,
+                backgroundColor: Colors.cyan,
+                iconColor: Colors.white,
+              ),
+            ],
+          )
+        ],
+      ),
     );
   }
 }
