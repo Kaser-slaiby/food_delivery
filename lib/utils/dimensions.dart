@@ -20,7 +20,7 @@ class Dimensions {
   // my screen width =411
   // Align width = 110
   // => x =411 / 110 = 3.73
-  static double pageViewTextContainer = screenWidth / 3.73;
+  static double pageViewTextContainer = screenWidth / 3.50;
 
   //dynamic height890 padding and margin
   static double height5 = screenHeight / 178;
