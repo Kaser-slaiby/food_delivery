@@ -110,7 +110,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               ? ListView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
-                  itemCount: 10,
+                  itemCount: rcommendedProduct.recommendedProductList.length,
                   itemBuilder: (context, index) {
                     return Container(
                       margin: EdgeInsets.only(
@@ -128,7 +128,10 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                               color: Colors.white24,
                               image: DecorationImage(
                                 fit: BoxFit.cover,
-                                image: AssetImage("assets/image/Hamburger.jpg"),
+                                image: NetworkImage(AppConstants.BASE_URL +
+                                    "/uploads/" +
+                                    rcommendedProduct
+                                        .recommendedProductList[index].img!),
                               ),
                             ),
                           ),
@@ -154,7 +157,9 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     BigText(
-                                        text: "Nutritious fruit meal in china"),
+                                        text: rcommendedProduct
+                                            .recommendedProductList[index]
+                                            .name!),
                                     SizedBox(
                                       height: Dimensions.height10,
                                     ),
