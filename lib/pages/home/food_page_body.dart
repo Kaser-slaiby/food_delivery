@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/controllers/popular_product_controller.dart';
 import 'package:food_delivery/controllers/recommended_product_controller.dart';
 import 'package:food_delivery/models/products_model.dart';
-import 'package:food_delivery/pages/food/popular_food_detail.dart';
+import 'package:food_delivery/routes/route_helper.dart';
 import 'package:food_delivery/utils/app_constants.dart';
 import 'package:food_delivery/widgets/app_column.dart';
 import 'package:food_delivery/widgets/icon_and_text_widget.dart';
@@ -50,7 +50,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                   height: Dimensions.pageView,
                   child: GestureDetector(
                     onTap: () {
-                      Get.to(() => PopularFoodDetail());
+                      Get.toNamed(RouteHelper.getPopularFood());
                     },
                     child: PageView.builder(
                         controller: pageController,
