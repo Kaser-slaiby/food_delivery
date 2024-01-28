@@ -271,7 +271,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                     left: Dimensions.width15,
                     right: Dimensions.width15),
                 child: AppCloumn(
-                  text: "Chinese Side",
+                  text: popularProduct.name!,
                 ),
               ),
             ),

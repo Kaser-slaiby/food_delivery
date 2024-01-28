@@ -17,7 +17,7 @@ class AppCloumn extends StatelessWidget {
       children: [
         BigText(
           text: text,
-          size: Dimensions.font26,
+          size: Dimensions.font20,
         ),
         SizedBox(
           height: Dimensions.height10,
