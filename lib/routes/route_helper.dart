@@ -9,14 +9,18 @@ class RouteHelper {
   static const String recommendedFood = "/recommended-food";
 
   static String getInitial() => '$initial';
-  static String getPopularFood() => '$popularFood';
+  static String getPopularFood(int pageId) => '$popularFood?pageId=$pageId';
   static String getRecommendedFood() => '$recommendedFood';
 
   static List<GetPage> routes = [
     GetPage(name: initial, page: () => MainFoodPage()),
     GetPage(
         name: popularFood,
-        page: () => PopularFoodDetail(),
+        page: () {
+          var pagId = Get.parameters['pageId'];
+          return PopularFoodDetail(pageId: int.parse(pagId!));
+        },
+
         //transition The best transition in pages
         transition: Transition.fadeIn),
     GetPage(
