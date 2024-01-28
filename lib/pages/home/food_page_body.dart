@@ -1,6 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery/controllers/popular_product_controller.dart';
+import 'package:food_delivery/controllers/recommended_product_controller.dart';
 import 'package:food_delivery/models/products_model.dart';
 import 'package:food_delivery/utils/app_constants.dart';
 import 'package:food_delivery/widgets/app_column.dart';
@@ -81,7 +82,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              BigText(text: "Popular"),
+              BigText(text: "Recommended"),
               SizedBox(
                 width: Dimensions.width10,
               ),
@@ -104,91 +105,101 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         ),
         //list of food and images
         //images section
-        ListView.builder(
-            physics: NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-            itemCount: 10,
-            itemBuilder: (context, index) {
-              return Container(
-                margin: EdgeInsets.only(
-                    left: Dimensions.width15,
-                    right: Dimensions.width15,
-                    bottom: Dimensions.height10),
-                child: Row(
-                  children: [
-                    Container(
-                      height: Dimensions.listViewImgSize,
-                      width: Dimensions.listViewImgSize,
-                      decoration: BoxDecoration(
-                        borderRadius:
-                            BorderRadius.circular(Dimensions.radius15),
-                        color: Colors.white24,
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage("assets/image/Hamburger.jpg"),
-                        ),
-                      ),
-                    ),
-                    //text container
-                    Expanded(
-                      child: Container(
-                        height: Dimensions.listViewTextContSize,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(Dimensions.radius20),
-                            bottomRight: Radius.circular(Dimensions.radius20),
+        GetBuilder<RecommendedProductController>(builder: (rcommendedProduct) {
+          return rcommendedProduct.isLoaded
+              ? ListView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      margin: EdgeInsets.only(
+                          left: Dimensions.width15,
+                          right: Dimensions.width15,
+                          bottom: Dimensions.height10),
+                      child: Row(
+                        children: [
+                          Container(
+                            height: Dimensions.listViewImgSize,
+                            width: Dimensions.listViewImgSize,
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.circular(Dimensions.radius15),
+                              color: Colors.white24,
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage("assets/image/Hamburger.jpg"),
+                              ),
+                            ),
                           ),
-                          color: Colors.white,
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.only(
-                              left: Dimensions.width10,
-                              right: Dimensions.width10),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              BigText(text: "Nutritious fruit meal in china"),
-                              SizedBox(
-                                height: Dimensions.height10,
+                          //text container
+                          Expanded(
+                            child: Container(
+                              height: Dimensions.listViewTextContSize,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  topRight:
+                                      Radius.circular(Dimensions.radius20),
+                                  bottomRight:
+                                      Radius.circular(Dimensions.radius20),
+                                ),
+                                color: Colors.white,
                               ),
-                              SmallText(text: "With Chinese characteristics"),
-                              SizedBox(
-                                height: Dimensions.height10,
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                    left: Dimensions.width10,
+                                    right: Dimensions.width10),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    BigText(
+                                        text: "Nutritious fruit meal in china"),
+                                    SizedBox(
+                                      height: Dimensions.height10,
+                                    ),
+                                    SmallText(
+                                        text: "With Chinese characteristics"),
+                                    SizedBox(
+                                      height: Dimensions.height10,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        IconAndTextWidget(
+                                            icon: Icons.circle_sharp,
+                                            text: "Normal",
+                                            iconColor: Colors.orangeAccent),
+                                        // SizedBox(
+                                        //   width: 20,
+                                        // ),
+                                        IconAndTextWidget(
+                                            icon: Icons.location_on,
+                                            text: "1.7KM",
+                                            iconColor: Colors.cyanAccent),
+                                        // SizedBox(
+                                        //   width: 20,
+                                        // ),
+                                        IconAndTextWidget(
+                                            icon: Icons.access_time_rounded,
+                                            text: "32min",
+                                            iconColor: Colors.deepOrangeAccent),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  IconAndTextWidget(
-                                      icon: Icons.circle_sharp,
-                                      text: "Normal",
-                                      iconColor: Colors.orangeAccent),
-                                  // SizedBox(
-                                  //   width: 20,
-                                  // ),
-                                  IconAndTextWidget(
-                                      icon: Icons.location_on,
-                                      text: "1.7KM",
-                                      iconColor: Colors.cyanAccent),
-                                  // SizedBox(
-                                  //   width: 20,
-                                  // ),
-                                  IconAndTextWidget(
-                                      icon: Icons.access_time_rounded,
-                                      text: "32min",
-                                      iconColor: Colors.deepOrangeAccent),
-                                ],
-                              ),
-                            ],
+                            ),
                           ),
-                        ),
+                        ],
                       ),
-                    ),
-                  ],
-                ),
-              );
-            }),
+                    );
+                  })
+              : CircularProgressIndicator(
+                  color: Colors.cyan,
+                );
+        })
       ],
     );
   }
