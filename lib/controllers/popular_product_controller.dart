@@ -18,6 +18,8 @@ class PopularProductController extends GetxController {
 
   int _quantity = 0;
 
+  int get quantity => _quantity;
+
   Future<void> getPopularProductList() async {
     Response response = await popularProductRepo.getPopularProductList();
     if (response.statusCode == 200) {
@@ -38,5 +40,6 @@ class PopularProductController extends GetxController {
     } else {
       _quantity = _quantity - 1;
     }
+    update();
   }
 }
