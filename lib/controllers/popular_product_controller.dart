@@ -7,11 +7,16 @@ class PopularProductController extends GetxController {
   final PopularProductRepo popularProductRepo;
 
   PopularProductController({required this.popularProductRepo});
+
   List<ProductModel> _popularProductList = [];
+
   List<ProductModel> get popularProductList => _popularProductList;
 
   bool _isLoaded = false;
+
   bool get isLoaded => _isLoaded;
+
+  int _quantity = 0;
 
   Future<void> getPopularProductList() async {
     Response response = await popularProductRepo.getPopularProductList();
@@ -24,6 +29,14 @@ class PopularProductController extends GetxController {
       update();
     } else {
       print("-200");
+    }
+  }
+
+  void setQuantity(bool isIncrement) {
+    if (isIncrement) {
+      _quantity = _quantity + 1;
+    } else {
+      _quantity = _quantity - 1;
     }
   }
 }
