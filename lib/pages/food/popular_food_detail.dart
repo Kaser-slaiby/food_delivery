@@ -6,6 +6,7 @@ import 'package:food_delivery/widgets/app_column.dart';
 import 'package:food_delivery/widgets/expandable_text.dart';
 import 'package:get/get.dart';
 
+import '../../utils/app_constants.dart';
 import '../../widgets/app_icon.dart';
 import '../../widgets/big_text.dart';
 
@@ -17,8 +18,8 @@ class PopularFoodDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     var product =
         Get.find<PopularProductController>().popularProductList[pageId];
-    print("page is id " +pageId.toString());
-    print("product name is "+product.name.toString());
+    // print("page is id " +pageId.toString());
+    // print("product name is "+product.name.toString());
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -32,7 +33,8 @@ class PopularFoodDetail extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.fill,
-                  image: AssetImage("assets/image/pizza.jpeg"),
+                  image: NetworkImage(
+                      AppConstants.BASE_URL + "/uploads/" + product.img!),
                 ),
               ),
             ),
@@ -75,7 +77,7 @@ class PopularFoodDetail extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   AppCloumn(
-                    text: "Chinese Side",
+                    text: product.name!,
                   ),
                   SizedBox(
                     height: Dimensions.height30,
@@ -89,34 +91,7 @@ class PopularFoodDetail extends StatelessWidget {
                   Expanded(
                     child: SingleChildScrollView(
                       child: ExpandabelText(
-                        text: "Pizza is sold fresh or frozen, "
-                            "and whole or in portion-size slices. "
-                            "Methods have been developed to overcome "
-                            "challenges such as preventing the sauce "
-                            "from combining with the dough, and producing a crust that can be frozen and reheated without"
-                            " becoming rigid."
-                            " There are frozen pizzas with raw ingredients and self-rising crusts."
-                            "Pizza is sold fresh or frozen, "
-                            "and whole or in portion-size slices. "
-                            "Methods have been developed to overcome "
-                            "challenges such as preventing the sauce "
-                            "from combining with the dough, and producing a crust that can be frozen and reheated without "
-                            "becoming rigid."
-                            " There are frozen pizzas with raw ingredients and self-rising crusts."
-                            "Pizza is sold fresh or frozen, "
-                            "and whole or in portion-size slices. "
-                            "Methods have been developed to overcome "
-                            "challenges such as preventing the sauce "
-                            "from combining with the dough, and producing a crust that can be frozen and reheated without "
-                            "becoming rigid."
-                            " There are frozen pizzas with raw ingredients and self-rising crusts."
-                            "Pizza is sold fresh or frozen, "
-                            "and whole or in portion-size slices. "
-                            "Methods have been developed to overcome "
-                            "challenges such as preventing the sauce "
-                            "from combining with the dough, and producing a crust that can be frozen and reheated without "
-                            "becoming rigid."
-                            " There are frozen pizzas with raw ingredients and self-rising crusts.",
+                        text: product.description!,
                       ),
                     ),
                   ),
