@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/controllers/recommended_product_controller.dart';
 import 'package:food_delivery/routes/route_helper.dart';
+import 'package:food_delivery/utils/app_constants.dart';
 import 'package:food_delivery/utils/dimensions.dart';
 import 'package:food_delivery/widgets/app_icon.dart';
 import 'package:food_delivery/widgets/big_text.dart';
-import 'package:food_delivery/widgets/expandable_text.dart';
 import 'package:get/get.dart';
 
+import '../../widgets/expandable_text.dart';
+
 class RecommendedFoodDetail extends StatelessWidget {
-  const RecommendedFoodDetail({super.key});
+  final int pageId;
+  const RecommendedFoodDetail({super.key, required this.pageId});
 
   @override
   Widget build(BuildContext context) {
+    var product =
+        Get.find<RecommendedProductController>().recommendedProductList[pageId];
     return Scaffold(
       body: CustomScrollView(
         slivers: [
@@ -41,7 +47,7 @@ class RecommendedFoodDetail extends StatelessWidget {
                 ),
                 child: Center(
                   child: BigText(
-                    text: "Sliver App Bar",
+                    text: product.name!,
                   ),
                 ),
                 width: double.maxFinite,
@@ -55,8 +61,8 @@ class RecommendedFoodDetail extends StatelessWidget {
             backgroundColor: Colors.cyan,
             expandedHeight: 300,
             flexibleSpace: FlexibleSpaceBar(
-              background: Image.asset(
-                "assets/image/pizza.jpeg",
+              background: Image.network(
+                AppConstants.BASE_URL + "/uploads/" + product.img!,
                 width: double.maxFinite,
                 fit: BoxFit.cover,
               ),
@@ -67,118 +73,7 @@ class RecommendedFoodDetail extends StatelessWidget {
               children: [
                 Container(
                   child: ExpandabelText(
-                    text: "Pizza is sold fresh or frozen,"
-                        "and whole or in portion-size slices."
-                        "Methods have been developed to overcome"
-                        "challenges such as preventing the sauce"
-                        "from combining with the dough, and producing a crust that can be frozen and reheated without"
-                        " becoming rigid."
-                        " There are frozen pizzas with raw ingredients and self-rising crusts."
-                        "Pizza is sold fresh or frozen, "
-                        "and whole or in portion-size slices."
-                        "Methods have been developed to overcome"
-                        "challenges such as preventing the sauce"
-                        "from combining with the dough, and producing a crust that can be frozen and reheated without"
-                        "becoming rigid."
-                        " There are frozen pizzas with raw ingredients and self-rising crusts."
-                        "Pizza is sold fresh or frozen,"
-                        "and whole or in portion-size slices."
-                        "Methods have been developed to overcome"
-                        "challenges such as preventing the sauce"
-                        "from combining with the dough, and producing a crust that can be frozen and reheated without"
-                        "becoming rigid."
-                        " There are frozen pizzas with raw ingredients and self-rising crusts."
-                        "Pizza is sold fresh or frozen,"
-                        "and whole or in portion-size slices."
-                        "Methods have been developed to overcome"
-                        "challenges such as preventing the sauce"
-                        "from combining with the dough, and producing a crust that can be frozen and reheated without"
-                        "becoming rigid."
-                        " There are frozen pizzas with raw ingredients and self-rising crusts."
-                        "Pizza is sold fresh or frozen,"
-                        "and whole or in portion-size slices."
-                        "Methods have been developed to overcome"
-                        "challenges such as preventing the sauce"
-                        "from combining with the dough, and producing a crust that can be frozen and reheated without"
-                        " becoming rigid."
-                        " There are frozen pizzas with raw ingredients and self-rising crusts."
-                        "Pizza is sold fresh or frozen, "
-                        "and whole or in portion-size slices."
-                        "Methods have been developed to overcome"
-                        "challenges such as preventing the sauce"
-                        "from combining with the dough, and producing a crust that can be frozen and reheated without "
-                        "becoming rigid."
-                        " There are frozen pizzas with raw ingredients and self-rising crusts."
-                        "Pizza is sold fresh or frozen, "
-                        "and whole or in portion-size slices. "
-                        "Methods have been developed to overcome "
-                        "challenges such as preventing the sauce "
-                        "from combining with the dough, and producing a crust that can be frozen and reheated without "
-                        "becoming rigid."
-                        " There are frozen pizzas with raw ingredients and self-rising crusts."
-                        "Pizza is sold fresh or frozen, "
-                        "and whole or in portion-size slices. "
-                        "Methods have been developed to overcome "
-                        "challenges such as preventing the sauce "
-                        "from combining with the dough, and producing a crust that can be frozen and reheated without "
-                        "becoming rigid."
-                        " There are frozen pizzas with raw ingredients and self-rising crusts."
-                        "Pizza is sold fresh or frozen,"
-                        "and whole or in portion-size slices."
-                        "Methods have been developed to overcome"
-                        "challenges such as preventing the sauce"
-                        "from combining with the dough, and producing a crust that can be frozen and reheated without"
-                        " becoming rigid."
-                        " There are frozen pizzas with raw ingredients and self-rising crusts."
-                        "Pizza is sold fresh or frozen, "
-                        "and whole or in portion-size slices."
-                        "Methods have been developed to overcome"
-                        "challenges such as preventing the sauce"
-                        "from combining with the dough, and producing a crust that can be frozen and reheated without"
-                        "becoming rigid."
-                        " There are frozen pizzas with raw ingredients and self-rising crusts."
-                        "Pizza is sold fresh or frozen,"
-                        "and whole or in portion-size slices."
-                        "Methods have been developed to overcome"
-                        "challenges such as preventing the sauce"
-                        "from combining with the dough, and producing a crust that can be frozen and reheated without"
-                        "becoming rigid."
-                        " There are frozen pizzas with raw ingredients and self-rising crusts."
-                        "Pizza is sold fresh or frozen,"
-                        "and whole or in portion-size slices."
-                        "Methods have been developed to overcome"
-                        "challenges such as preventing the sauce"
-                        "from combining with the dough, and producing a crust that can be frozen and reheated without"
-                        "becoming rigid."
-                        " There are frozen pizzas with raw ingredients and self-rising crusts."
-                        "Pizza is sold fresh or frozen,"
-                        "and whole or in portion-size slices."
-                        "Methods have been developed to overcome"
-                        "challenges such as preventing the sauce"
-                        "from combining with the dough, and producing a crust that can be frozen and reheated without"
-                        " becoming rigid."
-                        " There are frozen pizzas with raw ingredients and self-rising crusts."
-                        "Pizza is sold fresh or frozen, "
-                        "and whole or in portion-size slices."
-                        "Methods have been developed to overcome"
-                        "challenges such as preventing the sauce"
-                        "from combining with the dough, and producing a crust that can be frozen and reheated without "
-                        "becoming rigid."
-                        " There are frozen pizzas with raw ingredients and self-rising crusts."
-                        "Pizza is sold fresh or frozen, "
-                        "and whole or in portion-size slices. "
-                        "Methods have been developed to overcome "
-                        "challenges such as preventing the sauce "
-                        "from combining with the dough, and producing a crust that can be frozen and reheated without "
-                        "becoming rigid."
-                        " There are frozen pizzas with raw ingredients and self-rising crusts."
-                        "Pizza is sold fresh or frozen, "
-                        "and whole or in portion-size slices. "
-                        "Methods have been developed to overcome "
-                        "challenges such as preventing the sauce "
-                        "from combining with the dough, and producing a crust that can be frozen and reheated without "
-                        "becoming rigid."
-                        " There are frozen pizzas with raw ingredients and self-rising crusts.",
+                    text: product.description!,
                   ),
                   margin: EdgeInsets.only(
                     left: Dimensions.width10,
@@ -210,7 +105,7 @@ class RecommendedFoodDetail extends StatelessWidget {
                   iconColor: Colors.white,
                 ),
                 BigText(
-                  text: "\$12.88 " + " X " + " 0 ",
+                  text: "\$ ${product.price!} X  0 ",
                   size: Dimensions.font26,
                 ),
                 AppIcon(
