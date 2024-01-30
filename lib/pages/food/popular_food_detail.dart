@@ -19,6 +19,7 @@ class PopularFoodDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     var product =
         Get.find<PopularProductController>().popularProductList[pageId];
+    Get.find<PopularProductController>().intProduct();
     // print("page is id " +pageId.toString());
     // print("product name is "+product.name.toString());
     return Scaffold(
