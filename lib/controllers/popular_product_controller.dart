@@ -36,10 +36,20 @@ class PopularProductController extends GetxController {
 
   void setQuantity(bool isIncrement) {
     if (isIncrement) {
-      _quantity = _quantity + 1;
+      _quantity = checkQuantity(_quantity + 1);
     } else {
-      _quantity = _quantity - 1;
+      _quantity = checkQuantity(_quantity - 1);
     }
     update();
+  }
+
+  int checkQuantity(int quantity) {
+    if (quantity < 0) {
+      return 0;
+    } else if (quantity > 20) {
+      return 20;
+    } else {
+      return quantity;
+    }
   }
 }
