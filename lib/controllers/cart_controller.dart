@@ -15,7 +15,7 @@ class CartController extends GetxController {
 
   void addItem(ProductModel product, int quantity) {
     var totalQuantity = 0;
-    if (_items.containsValue(product.id!)) {
+    if (_items.containsKey(product.id!)) {
       _items.update(product.id!, (value) {
         totalQuantity = value.quantity! + quantity;
         return CartModel(
@@ -28,10 +28,14 @@ class CartController extends GetxController {
           isExist: true,
         );
       });
+      if (totalQuantity <= 0) {
+        _items.remove(product.id);
+      }
     } else {
       if (quantity > 0) {
         _items.putIfAbsent(product.id!, () {
           _items.forEach((key, value) {});
+
           return CartModel(
             id: product.id,
             name: product.name,
@@ -42,9 +46,6 @@ class CartController extends GetxController {
             isExist: true,
           );
         });
-        if (totalQuantity <= 0) {
-          _items.remove(product.id);
-        }
       } else {
         Get.snackbar("Item count", "You should at least add an item in th",
             backgroundColor: Colors.blueGrey, colorText: Colors.white);
@@ -69,5 +70,13 @@ class CartController extends GetxController {
       });
     }
     return quantity;
+  }
+
+  int get totalItems {
+    var totalQuantity = 0;
+    _items.forEach((key, value) {
+      totalQuantity += value.quantity!;
+    });
+    return totalQuantity;
   }
 }
