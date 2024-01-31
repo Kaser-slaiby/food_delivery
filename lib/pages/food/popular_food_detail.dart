@@ -6,6 +6,7 @@ import 'package:food_delivery/widgets/app_column.dart';
 import 'package:food_delivery/widgets/expandable_text.dart';
 import 'package:get/get.dart';
 
+import '../../controllers/cart_controller.dart';
 import '../../utils/app_constants.dart';
 import '../../widgets/app_icon.dart';
 import '../../widgets/big_text.dart';
@@ -19,7 +20,8 @@ class PopularFoodDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     var product =
         Get.find<PopularProductController>().popularProductList[pageId];
-    Get.find<PopularProductController>().intProduct();
+    Get.find<PopularProductController>()
+        .intProduct(product, Get.find<CartController>());
     // print("page is id " +pageId.toString());
     // print("product name is "+product.name.toString());
     return Scaffold(
@@ -148,7 +150,7 @@ class PopularFoodDetail extends StatelessWidget {
                           ),
                         ),
                         BigText(
-                          text: popularProduct.quantity.toString(),
+                          text: popularProduct.inCartItems.toString(),
                         ),
                         GestureDetector(
                           onTap: () {
@@ -168,8 +170,13 @@ class PopularFoodDetail extends StatelessWidget {
                       left: Dimensions.width15,
                       right: Dimensions.width15,
                     ),
-                    child: BigText(
-                      text: "\$ ${product.price!} | Add To Cart",
+                    child: GestureDetector(
+                      onTap: () {
+                        popularProduct.addItems(product);
+                      },
+                      child: BigText(
+                        text: "\$ ${product.price!} | Add To Cart",
+                      ),
                     ),
                     decoration: BoxDecoration(
                       color: Colors.white,
