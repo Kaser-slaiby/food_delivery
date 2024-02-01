@@ -102,11 +102,16 @@ class RecommendedFoodDetail extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    AppIcon(
-                      iconSize: Dimensions.iconSize24,
-                      icon: Icons.remove,
-                      backgroundColor: Colors.cyan,
-                      iconColor: Colors.white,
+                    GestureDetector(
+                      onTap: () {
+                        controller.setQuantity(false);
+                      },
+                      child: AppIcon(
+                        iconSize: Dimensions.iconSize24,
+                        icon: Icons.remove,
+                        backgroundColor: Colors.cyan,
+                        iconColor: Colors.white,
+                      ),
                     ),
                     BigText(
                       text: "\$ ${product.price!} X  0 ",
