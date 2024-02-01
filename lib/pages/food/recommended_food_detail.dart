@@ -35,7 +35,11 @@ class RecommendedFoodDetail extends StatelessWidget {
                     onTap: () {
                       Get.toNamed(RouteHelper.getInitial());
                     },
-                    child: AppIcon(icon: Icons.clear),
+                    child: AppIcon(
+                      icon: Icons.clear,
+                      size: 35,
+                      iconSize: 22,
+                    ),
                   ),
                   // AppIcon(icon: Icons.shopping_cart_outlined),
                   GetBuilder<PopularProductController>(builder: (controller) {
