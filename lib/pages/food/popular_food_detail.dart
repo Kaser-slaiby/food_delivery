@@ -60,6 +60,8 @@ class PopularFoodDetail extends StatelessWidget {
                       children: [
                         AppIcon(
                           icon: Icons.shopping_cart_outlined,
+                          size: 35,
+                          iconSize: 22,
                         ),
                         Get.find<PopularProductController>().totalItems >= 1
                             ? Positioned(
@@ -69,14 +71,14 @@ class PopularFoodDetail extends StatelessWidget {
                                   icon: Icons.circle,
                                   size: 16,
                                   iconColor: Colors.transparent,
-                                  backgroundColor: Colors.black38,
+                                  backgroundColor: Colors.tealAccent,
                                 ),
                               )
                             : Container(),
                         Get.find<PopularProductController>().totalItems >= 1
                             ? Positioned(
-                                right: 0,
-                                top: 0,
+                                right: 5,
+                                top: 1,
                                 child: BigText(
                                   text: Get.find<PopularProductController>()
                                       .totalItems

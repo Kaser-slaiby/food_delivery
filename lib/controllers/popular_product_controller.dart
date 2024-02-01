@@ -45,6 +45,7 @@ class PopularProductController extends GetxController {
   void setQuantity(bool isIncrement) {
     if (isIncrement) {
       _quantity = checkQuantity(_quantity + 1);
+      print("object" + _quantity.toString());
     } else {
       _quantity = checkQuantity(_quantity - 1);
     }
@@ -82,7 +83,7 @@ class PopularProductController extends GetxController {
     _quantity = 0;
     _inCartItems = _cart.getQuantity(product);
     _cart.items.forEach((key, value) {
-      // print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" + value.id.toString());
+      // print("x" + value.id.toString());
     });
     // } else {
     //   Get.snackbar("Item count", "You should at least add an item in th",
