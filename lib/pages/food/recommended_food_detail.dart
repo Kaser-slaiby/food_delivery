@@ -114,7 +114,8 @@ class RecommendedFoodDetail extends StatelessWidget {
                       ),
                     ),
                     BigText(
-                      text: "\$ ${product.price!} X  0 ",
+                      text:
+                          "\$ ${product.price!} X  ${controller.inCartItems} ",
                       size: Dimensions.font26,
                     ),
                     GestureDetector(
