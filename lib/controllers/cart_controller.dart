@@ -26,6 +26,7 @@ class CartController extends GetxController {
           quantity: value.quantity! + quantity,
           time: DateTime.now().toString(),
           isExist: true,
+          product: product,
         );
       });
       if (totalQuantity <= 0) {
@@ -44,6 +45,7 @@ class CartController extends GetxController {
             quantity: quantity,
             time: DateTime.now().toString(),
             isExist: true,
+            product: product,
           );
         });
       } else {
