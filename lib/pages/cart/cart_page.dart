@@ -152,6 +152,10 @@ class CartPage extends StatelessWidget {
                                                   onTap: () {
                                                     // popularProduct
                                                     //     .setQuantity(false);
+                                                    cartController.addItem(
+                                                        _cartList[index]
+                                                            .product!,
+                                                        -1);
                                                   },
                                                   child: Icon(
                                                     Icons.remove,
@@ -168,6 +172,10 @@ class CartPage extends StatelessWidget {
                                                   onTap: () {
                                                     // popularProduct
                                                     //     .setQuantity(true);
+                                                    cartController.addItem(
+                                                        _cartList[index]
+                                                            .product!,
+                                                        1);
                                                   },
                                                   child: Icon(
                                                     Icons.add,

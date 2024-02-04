@@ -53,6 +53,7 @@ class CartController extends GetxController {
             backgroundColor: Colors.blueGrey, colorText: Colors.white);
       }
     }
+    update();
   }
 
   bool existInCart(ProductModel product) {
