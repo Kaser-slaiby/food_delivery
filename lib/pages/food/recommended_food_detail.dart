@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/controllers/popular_product_controller.dart';
 import 'package:food_delivery/controllers/recommended_product_controller.dart';
-import 'package:food_delivery/pages/cart/cart_page.dart';
 import 'package:food_delivery/routes/route_helper.dart';
 import 'package:food_delivery/utils/app_constants.dart';
 import 'package:food_delivery/utils/dimensions.dart';
@@ -48,7 +47,8 @@ class RecommendedFoodDetail extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            Get.to(() => CartPage());
+                            // Get.to(() => CartPage());
+                            Get.toNamed(RouteHelper.getCartPage());
                           },
                           child: AppIcon(
                             icon: Icons.shopping_cart_outlined,
@@ -60,11 +60,17 @@ class RecommendedFoodDetail extends StatelessWidget {
                             ? Positioned(
                                 right: 0,
                                 top: 0,
-                                child: AppIcon(
-                                  icon: Icons.circle,
-                                  size: 16,
-                                  iconColor: Colors.transparent,
-                                  backgroundColor: Colors.tealAccent,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    // Get.to(() => CartPage());
+                                    Get.toNamed(RouteHelper.getCartPage());
+                                  },
+                                  child: AppIcon(
+                                    icon: Icons.circle,
+                                    size: 16,
+                                    iconColor: Colors.transparent,
+                                    backgroundColor: Colors.tealAccent,
+                                  ),
                                 ),
                               )
                             : Container(),
