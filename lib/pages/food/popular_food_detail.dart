@@ -73,11 +73,16 @@ class PopularFoodDetail extends StatelessWidget {
                             ? Positioned(
                                 right: 0,
                                 top: 0,
-                                child: AppIcon(
-                                  icon: Icons.circle,
-                                  size: 16,
-                                  iconColor: Colors.transparent,
-                                  backgroundColor: Colors.tealAccent,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Get.to(() => CartPage());
+                                  },
+                                  child: AppIcon(
+                                    icon: Icons.circle,
+                                    size: 16,
+                                    iconColor: Colors.transparent,
+                                    backgroundColor: Colors.tealAccent,
+                                  ),
                                 ),
                               )
                             : Container(),

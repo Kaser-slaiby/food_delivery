@@ -24,10 +24,15 @@ class CartPage extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                AppIcon(
-                  icon: Icons.arrow_back_ios,
-                  iconSize: 22,
-                  size: Dimensions.iconSize24 * 2,
+                GestureDetector(
+                  onTap: () {
+                    Get.to(() => MainFoodPage());
+                  },
+                  child: AppIcon(
+                    icon: Icons.arrow_back_ios,
+                    iconSize: 22,
+                    size: Dimensions.iconSize24 * 2,
+                  ),
                 ),
                 SizedBox(
                   width: Dimensions.width20 * 15,
@@ -108,9 +113,7 @@ class CartPage extends StatelessWidget {
                                         color: Colors.black,
                                       ),
                                       SmallText(
-                                        text: cartController
-                                            .getItems[index].price
-                                            .toString(),
+                                        text: "Spicy",
                                         color: Colors.black,
                                       ),
                                       Row(
@@ -118,7 +121,9 @@ class CartPage extends StatelessWidget {
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           BigText(
-                                            text: "\$ 33.0",
+                                            text: cartController
+                                                .getItems[index].price
+                                                .toString(),
                                             color: Colors.red,
                                           ),
                                           Container(
