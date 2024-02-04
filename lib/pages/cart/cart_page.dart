@@ -8,6 +8,7 @@ import 'package:food_delivery/widgets/small_text.dart';
 import 'package:get/get.dart';
 
 import '../../controllers/cart_controller.dart';
+import '../../routes/route_helper.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
@@ -41,7 +42,8 @@ class CartPage extends StatelessWidget {
                   onTap: () {},
                   child: GestureDetector(
                     onTap: () {
-                      Get.to(() => MainFoodPage());
+                      // Get.to(() => MainFoodPage());
+                      Get.toNamed(RouteHelper.getInitial());
                     },
                     child: AppIcon(
                       icon: Icons.home_outlined,
