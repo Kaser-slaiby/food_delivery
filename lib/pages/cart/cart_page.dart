@@ -70,8 +70,9 @@ class CartPage extends StatelessWidget {
                 context: context,
                 removeTop: true,
                 child: GetBuilder<CartController>(builder: (cartController) {
+                  var _cartList = cartController.getItems;
                   return ListView.builder(
-                      itemCount: cartController.getItems.length,
+                      itemCount: _cartList.length,
                       itemBuilder: (_, index) {
                         return Container(
                           height: Dimensions.height30 * 3,
@@ -156,7 +157,10 @@ class CartPage extends StatelessWidget {
                                                     Icons.remove,
                                                   ),
                                                 ),
-                                                BigText(text: "0"),
+                                                BigText(
+                                                    text: _cartList[index]
+                                                        .quantity
+                                                        .toString()),
                                                 // popularProduct.inCartItems
                                                 //     .toString(),
                                                 // ),
