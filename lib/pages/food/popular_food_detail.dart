@@ -60,20 +60,16 @@ class PopularFoodDetail extends StatelessWidget {
                     return GestureDetector(
                       onTap: () {
                         // Get.to(() => CartPage());
-                        Get.toNamed(RouteHelper.getCartPage());
+                        if (controller.totalItems >= 1) {
+                          Get.toNamed(RouteHelper.getCartPage());
+                        }
                       },
                       child: Stack(
                         children: [
-                          GestureDetector(
-                            onTap: () {
-                              // Get.to(() => CartPage());
-                              Get.toNamed(RouteHelper.getCartPage());
-                            },
-                            child: AppIcon(
-                              icon: Icons.shopping_cart_outlined,
-                              size: 35,
-                              iconSize: 22,
-                            ),
+                          AppIcon(
+                            icon: Icons.shopping_cart_outlined,
+                            size: 35,
+                            iconSize: 22,
                           ),
                           controller.totalItems >= 1
                               ? Positioned(
