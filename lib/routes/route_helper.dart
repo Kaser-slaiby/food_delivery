@@ -15,8 +15,8 @@ class RouteHelper {
   static String getPopularFood(int pageId, String page) =>
       '$popularFood?pageId=$pageId&page=$page';
 
-  static String getRecommendedFood(int pageId) =>
-      '$recommendedFood?pageId=$pageId';
+  static String getRecommendedFood(int pageId, String page) =>
+      '$recommendedFood?pageId=$pageId&page=$page';
 
   static String getCartPage() => '$cartPage';
 
@@ -39,7 +39,11 @@ class RouteHelper {
         name: recommendedFood,
         page: () {
           var pagId = Get.parameters['pageId'];
-          return RecommendedFoodDetail(pageId: int.parse(pagId!));
+          var page = Get.parameters["page"];
+          return RecommendedFoodDetail(
+            pageId: int.parse(pagId!),
+            page: page!,
+          );
         },
         //transition The best transition in pages
         transition: Transition.fadeIn),
