@@ -211,7 +211,7 @@ class CartPage extends StatelessWidget {
                                             ),
                                           ),
                                         ],
-                                      )
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -225,6 +225,75 @@ class CartPage extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: GetBuilder<PopularProductController>(
+        builder: (popularProduct) {
+          return Container(
+            height: Dimensions.bottomHeightBar,
+            padding: EdgeInsets.only(
+              top: Dimensions.height5,
+              bottom: Dimensions.height5,
+              right: Dimensions.width30,
+              left: Dimensions.width30,
+            ),
+            decoration: BoxDecoration(
+              color: Color(0xFFECEFF1),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(Dimensions.radius15 * 2),
+                topRight: Radius.circular(Dimensions.radius15 * 2),
+              ),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  padding: EdgeInsets.only(
+                    top: Dimensions.height5,
+                    bottom: Dimensions.height5,
+                    left: Dimensions.width15,
+                    right: Dimensions.width15,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(
+                      Dimensions.radius15,
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      BigText(
+                        text: popularProduct.inCartItems.toString(),
+                      ),
+                    ],
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    // popularProduct.addItems(product);
+                  },
+                  child: Container(
+                    padding: EdgeInsets.only(
+                      top: Dimensions.height5,
+                      bottom: Dimensions.height5,
+                      left: Dimensions.width15,
+                      right: Dimensions.width15,
+                    ),
+                    child: BigText(
+                      text: "Add To Cart",
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(
+                        Dimensions.radius15,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
       ),
     );
   }
