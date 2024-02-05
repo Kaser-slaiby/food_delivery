@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/controllers/popular_product_controller.dart';
-import 'package:food_delivery/pages/home/main_food_page.dart';
-import 'package:food_delivery/utils/dimensions.dart';
 import 'package:food_delivery/widgets/app_column.dart';
 import 'package:food_delivery/widgets/expandable_text.dart';
 import 'package:get/get.dart';
 
 import '../../controllers/cart_controller.dart';
+import '../../controllers/popular_product_controller.dart';
 import '../../routes/route_helper.dart';
 import '../../utils/app_constants.dart';
+import '../../utils/dimensions.dart';
 import '../../widgets/app_icon.dart';
 import '../../widgets/big_text.dart';
 
 class PopularFoodDetail extends StatelessWidget {
   final int pageId;
+  final String page;
 
-  const PopularFoodDetail({super.key, required this.pageId});
+  const PopularFoodDetail(
+      {super.key, required this.pageId, required this.page});
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +54,11 @@ class PopularFoodDetail extends StatelessWidget {
                 children: [
                   GestureDetector(
                       onTap: () {
-                        Get.to(() => MainFoodPage());
+                        if (page == "cartpage") {
+                          Get.toNamed(RouteHelper.getCartPage());
+                        } else {
+                          Get.toNamed(RouteHelper.getInitial());
+                        }
                       },
                       child: AppIcon(icon: Icons.arrow_back_ios)),
                   GetBuilder<PopularProductController>(builder: (controller) {

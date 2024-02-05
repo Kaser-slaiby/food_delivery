@@ -12,7 +12,8 @@ class RouteHelper {
 
   static String getInitial() => '$initial';
 
-  static String getPopularFood(int pageId) => '$popularFood?pageId=$pageId';
+  static String getPopularFood(int pageId, String page) =>
+      '$popularFood?pageId=$pageId&page=$page';
 
   static String getRecommendedFood(int pageId) =>
       '$recommendedFood?pageId=$pageId';
@@ -25,7 +26,11 @@ class RouteHelper {
         name: popularFood,
         page: () {
           var pagId = Get.parameters['pageId'];
-          return PopularFoodDetail(pageId: int.parse(pagId!));
+          var page = Get.parameters["page"];
+          return PopularFoodDetail(
+            pageId: int.parse(pagId!),
+            page: page!,
+          );
         },
 
         //transition The best transition in pages
