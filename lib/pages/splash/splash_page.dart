@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:food_delivery/routes/route_helper.dart';
+import 'package:food_delivery/utils/dimensions.dart';
 import 'package:get/get.dart';
 
 import '../../controllers/popular_product_controller.dart';
@@ -48,14 +49,14 @@ class _SplashScreenState extends State<SplashScreen>
             child: Center(
               child: Image.asset(
                 "assets/image/Logo1.png",
-                width: 250,
+                width: Dimensions.splashImg,
               ),
             ),
           ),
           Center(
             child: Image.asset(
               "assets/image/Logo2.png",
-              width: 250,
+              width: Dimensions.splashImg,
             ),
           ),
         ],
