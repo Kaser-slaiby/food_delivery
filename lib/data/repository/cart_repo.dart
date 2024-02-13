@@ -73,6 +73,10 @@ class CartRepo {
         AppConstants.CART_HISTORY_LIST, cartHistory);
     print("The lenght of history list is " +
         getCartHistoryList().length.toString());
+    for (int i = 0; i < getCartHistoryList().length; i++) {
+      print("The time for the order is " +
+          getCartHistoryList()[i].time.toString());
+    }
   }
 
   void removeCart() {
