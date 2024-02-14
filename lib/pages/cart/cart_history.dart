@@ -78,9 +78,10 @@ class CartHistory extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              BigText(text: "03/01/1111"),
+                              BigText(
+                                  text: getCartHistoryList[ListCounter].time!),
                               SizedBox(
-                                height: Dimensions.height15,
+                                height: Dimensions.height5,
                               ),
                               Row(
                                 mainAxisAlignment:
@@ -99,7 +100,8 @@ class CartHistory extends StatelessWidget {
                                               height: 80,
                                               width: 80,
                                               margin: EdgeInsets.only(
-                                                  right: Dimensions.width10),
+                                                  right: Dimensions.width10,
+                                                  bottom: Dimensions.height20),
                                               decoration: BoxDecoration(
                                                   borderRadius:
                                                       BorderRadius.circular(

@@ -35,6 +35,7 @@ class CartPage extends StatelessWidget {
                     icon: Icons.arrow_back_ios,
                     iconSize: 22,
                     size: Dimensions.iconSize24 * 2,
+                    iconColor: Colors.orange,
                   ),
                 ),
                 SizedBox(
@@ -51,6 +52,7 @@ class CartPage extends StatelessWidget {
                       icon: Icons.home_outlined,
                       iconSize: 22,
                       size: Dimensions.iconSize24 * 2,
+                      iconColor: Colors.orange,
                     ),
                   ),
                 ),
@@ -58,6 +60,7 @@ class CartPage extends StatelessWidget {
                   icon: Icons.shopping_cart,
                   iconSize: 22,
                   size: Dimensions.iconSize24 * 2,
+                  iconColor: Colors.orange,
                 ),
               ],
             ),
