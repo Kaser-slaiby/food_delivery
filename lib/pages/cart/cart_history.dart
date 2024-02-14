@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/widgets/app_icon.dart';
 import 'package:food_delivery/widgets/small_text.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 import '../../controllers/cart_controller.dart';
 import '../../utils/app_constants.dart';
@@ -78,8 +79,17 @@ class CartHistory extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              BigText(
-                                  text: getCartHistoryList[ListCounter].time!),
+                              (() {
+                                DateTime parseDate =
+                                    DateFormat("yyyy-MM-dd HH:mm:ss").parse(
+                                        getCartHistoryList[ListCounter].time!);
+                                var inputDate =
+                                    DateTime.parse(parseDate.toString());
+                                var outputFormat =
+                                    DateFormat("MM-dd-yyyy hh:mm a");
+                                var outputDate = outputFormat.format(inputDate);
+                                return BigText(text: outputDate);
+                              }()),
                               SizedBox(
                                 height: Dimensions.height5,
                               ),
