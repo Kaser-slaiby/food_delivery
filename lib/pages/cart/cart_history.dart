@@ -64,7 +64,7 @@ class CartHistory extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-                height: 120,
+                // height: Dimensions.height45 * 2,
                 margin: EdgeInsets.only(
                     left: Dimensions.width10,
                     right: Dimensions.width10,
@@ -76,6 +76,7 @@ class CartHistory extends StatelessWidget {
                     children: [
                       for (int i = 0; i < itemsPerOrder.length; i++)
                         Container(
+                          // height: Dimensions.height20 * 13,
                           margin: EdgeInsets.only(bottom: Dimensions.height10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -108,8 +109,8 @@ class CartHistory extends StatelessWidget {
                                       }
                                       return index <= 2
                                           ? Container(
-                                              height: 80,
-                                              width: 80,
+                                              height: Dimensions.height30 * 3,
+                                              width: Dimensions.width20 * 8,
                                               margin: EdgeInsets.only(
                                                   right: Dimensions.width10,
                                                   bottom: Dimensions.height20),
@@ -133,7 +134,7 @@ class CartHistory extends StatelessWidget {
                                     }),
                                   ),
                                   Container(
-                                    height: 80,
+                                    height: Dimensions.height30 * 3,
                                     child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceEvenly,
