@@ -51,8 +51,12 @@ class CartController extends GetxController {
           );
         });
       } else {
-        Get.snackbar("Item count", "You should at least add an item in th",
-            backgroundColor: Colors.blueGrey, colorText: Colors.white);
+        Get.snackbar(
+          "Item count",
+          "You should at least add an item in th",
+          backgroundColor: Colors.blueGrey,
+          colorText: Colors.white,
+        );
       }
     }
     cartRepo.addToCartList(getItems);
