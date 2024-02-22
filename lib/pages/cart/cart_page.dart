@@ -84,7 +84,7 @@ class CartPage extends StatelessWidget {
                               itemCount: _cartList.length,
                               itemBuilder: (_, index) {
                                 return Container(
-                                  height: Dimensions.height30 * 3,
+                                  height: Dimensions.height20 * 10,
                                   width: double.maxFinite,
                                   margin: EdgeInsets.only(
                                     bottom: Dimensions.height10,
