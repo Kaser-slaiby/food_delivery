@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/utils/dimensions.dart';
+import 'package:food_delivery/widgets/account_widgets.dart';
 import 'package:food_delivery/widgets/app_icon.dart';
 import 'package:food_delivery/widgets/big_text.dart';
 
@@ -30,7 +31,19 @@ class AccountPage extends StatelessWidget {
               size: Dimensions.height15 * 10,
               iconSize: Dimensions.height45 + Dimensions.height30,
               iconColor: Colors.white,
-            )
+            ),
+            AccountWidgets(
+              bigText: BigText(
+                text: "Kaser",
+              ),
+              appIcon: AppIcon(
+                icon: Icons.person,
+                backgroundColor: Colors.orangeAccent,
+                size: Dimensions.height10 * 5,
+                iconSize: Dimensions.height10 * 5 / 2,
+                iconColor: Colors.white,
+              ),
+            ),
           ],
         ),
       ),
