@@ -25,6 +25,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
   Widget build(BuildContext context) {
     // print("current height is " + MediaQuery.of(context).size.height.toString());
     return RefreshIndicator(
+        color: Colors.black,
         child: Column(
           children: [
             Column(
