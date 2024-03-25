@@ -32,6 +32,7 @@ class AccountPage extends StatelessWidget {
               iconSize: Dimensions.height45 + Dimensions.height30,
               iconColor: Colors.white,
             ),
+            SizedBox(height: Dimensions.height30),
             AccountWidgets(
               bigText: BigText(
                 text: "Kaser",
@@ -44,6 +45,59 @@ class AccountPage extends StatelessWidget {
                 iconColor: Colors.white,
               ),
             ),
+            SizedBox(height: Dimensions.height15),
+            AccountWidgets(
+              bigText: BigText(
+                text: "00000000",
+              ),
+              appIcon: AppIcon(
+                icon: Icons.phone,
+                backgroundColor: Colors.greenAccent,
+                size: Dimensions.height10 * 5,
+                iconSize: Dimensions.height10 * 5 / 2,
+                iconColor: Colors.white,
+              ),
+            ),
+            SizedBox(height: Dimensions.height15),
+            AccountWidgets(
+              bigText: BigText(
+                text: "www@gmail.com",
+              ),
+              appIcon: AppIcon(
+                icon: Icons.email,
+                backgroundColor: Colors.greenAccent,
+                size: Dimensions.height10 * 5,
+                iconSize: Dimensions.height10 * 5 / 2,
+                iconColor: Colors.white,
+              ),
+            ),
+            SizedBox(height: Dimensions.height15),
+            AccountWidgets(
+              bigText: BigText(
+                text: "Fill in your address",
+              ),
+              appIcon: AppIcon(
+                icon: Icons.location_on,
+                backgroundColor: Colors.orangeAccent,
+                size: Dimensions.height10 * 5,
+                iconSize: Dimensions.height10 * 5 / 2,
+                iconColor: Colors.white,
+              ),
+            ),
+            SizedBox(height: Dimensions.height15),
+            AccountWidgets(
+              bigText: BigText(
+                text: "Message",
+              ),
+              appIcon: AppIcon(
+                icon: Icons.message_outlined,
+                backgroundColor: Colors.orangeAccent,
+                size: Dimensions.height10 * 5,
+                iconSize: Dimensions.height10 * 5 / 2,
+                iconColor: Colors.white,
+              ),
+            ),
+            SizedBox(height: Dimensions.height15),
           ],
         ),
       ),
