@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/utils/dimensions.dart';
 import 'package:food_delivery/widgets/app_text_field.dart';
+import 'package:food_delivery/widgets/big_text.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
@@ -54,6 +55,27 @@ class SignUpPage extends StatelessWidget {
               icon: Icons.phone,
               hintText: "Phone",
               textController: phoneController),
+          SizedBox(
+            height: Dimensions.height55 / 2,
+          ),
+          Container(
+            width: Dimensions.screenWidth / 2,
+            height: Dimensions.screenHeight / 10,
+            decoration: BoxDecoration(
+              color: Colors.orangeAccent,
+              borderRadius: BorderRadius.circular(Dimensions.radius35),
+            ),
+            child: Center(
+              child: BigText(
+                color: Colors.white,
+                text: "Sign Up",
+                size: Dimensions.font20 + Dimensions.font16 / 2,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: Dimensions.height20,
+          ),
         ],
       ),
     );
