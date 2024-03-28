@@ -26,8 +26,19 @@ class SignUpPage extends StatelessWidget {
             ),
           ),
           Container(
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(Dimensions.radius30),
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: Dimensions.height10,
+                    spreadRadius: Dimensions.height5,
+                    offset: Offset(1, 10),
+                    color: Colors.grey.withOpacity(0.2),
+                  ),
+                ]),
             margin: EdgeInsets.only(
-                left: Dimensions.width5, right: Dimensions.width5),
+                left: Dimensions.width10, right: Dimensions.width10),
             child: TextField(
               controller: emailController,
               decoration: InputDecoration(
@@ -37,11 +48,19 @@ class SignUpPage extends StatelessWidget {
                   color: Colors.orange,
                 ),
                 focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(Dimensions.radius30),
-                    borderSide: BorderSide(width: 1.0, color: Colors.grey)),
+                  borderRadius: BorderRadius.circular(Dimensions.radius30),
+                  borderSide: BorderSide(width: 1.0, color: Colors.white),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(Dimensions.radius30),
+                  borderSide: BorderSide(width: 1.0, color: Colors.white),
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(Dimensions.radius30),
+                ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );
