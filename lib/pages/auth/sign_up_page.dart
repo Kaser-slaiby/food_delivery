@@ -14,6 +14,7 @@ class SignUpPage extends StatelessWidget {
     var passwordController = TextEditingController();
     var nameController = TextEditingController();
     var phoneController = TextEditingController();
+    var signUpImages = ["t.png", "g.png", "f.png"];
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -62,7 +63,7 @@ class SignUpPage extends StatelessWidget {
           ),
           Container(
             width: Dimensions.screenWidth / 2,
-            height: Dimensions.screenHeight / 10,
+            height: Dimensions.screenHeight / 12,
             decoration: BoxDecoration(
               color: Colors.orangeAccent,
               borderRadius: BorderRadius.circular(Dimensions.radius35),
@@ -81,9 +82,32 @@ class SignUpPage extends StatelessWidget {
               recognizer: TapGestureRecognizer()..onTap = () => Get.back(),
               text: "Have an account already?",
               style: TextStyle(
+                  color: Colors.grey[500], fontSize: Dimensions.font20),
+            ),
+          ),
+          SizedBox(
+            height: Dimensions.height30 + Dimensions.height10,
+          ),
+          RichText(
+            text: TextSpan(
+              text: "Sign up using one of following methods",
+              style: TextStyle(
                   color: Colors.grey[500], fontSize: Dimensions.font16),
             ),
           ),
+          Wrap(
+            children: List.generate(
+                3,
+                (index) => Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CircleAvatar(
+                        radius: Dimensions.radius30,
+                        backgroundImage:
+                            AssetImage("assets/image/" + signUpImages[index]),
+                        backgroundColor: Colors.white,
+                      ),
+                    )),
+          )
         ],
       ),
     );
