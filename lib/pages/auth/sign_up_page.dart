@@ -64,8 +64,8 @@ class SignUpPage extends StatelessWidget {
               height: Dimensions.height55 / 2,
             ),
             Container(
-              width: Dimensions.screenWidth / 2,
-              height: Dimensions.screenHeight / 12,
+              width: Dimensions.screenWidth / 2.5,
+              height: Dimensions.screenHeight / 13,
               decoration: BoxDecoration(
                 color: Colors.orangeAccent,
                 borderRadius: BorderRadius.circular(Dimensions.radius35),
@@ -74,7 +74,7 @@ class SignUpPage extends StatelessWidget {
                 child: BigText(
                   color: Colors.white,
                   text: "Sign Up",
-                  size: Dimensions.font20 + Dimensions.font16 / 2,
+                  size: Dimensions.font20 + Dimensions.font16 / 2.5,
                 ),
               ),
             ),
@@ -103,7 +103,7 @@ class SignUpPage extends StatelessWidget {
                   (index) => Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: CircleAvatar(
-                          radius: Dimensions.radius30,
+                          radius: Dimensions.radius20 + Dimensions.height5,
                           backgroundImage:
                               AssetImage("assets/image/" + signUpImages[index]),
                           backgroundColor: Colors.white,

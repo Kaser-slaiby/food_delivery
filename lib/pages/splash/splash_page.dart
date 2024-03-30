@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen>
     controller =
         AnimationController(vsync: this, duration: const Duration(seconds: 2))
           ..forward();
-    animation = CurvedAnimation(parent: controller, curve: Curves.easeInExpo);
+    animation = CurvedAnimation(parent: controller, curve: Curves.linear);
 
     Timer(Duration(seconds: 3), () => Get.offNamed(RouteHelper.getInitial()));
   }
@@ -48,14 +48,14 @@ class _SplashScreenState extends State<SplashScreen>
             scale: animation,
             child: Center(
               child: Image.asset(
-                "assets/image/Logo1.png",
+                "assets/image/logo2.png",
                 width: Dimensions.splashImg,
               ),
             ),
           ),
           Center(
             child: Image.asset(
-              "assets/image/Logo2.png",
+              "assets/image/logo1.png",
               width: Dimensions.splashImg,
             ),
           ),
