@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:food_delivery/base/show_custom_snackbar.dart';
 import 'package:food_delivery/utils/dimensions.dart';
 import 'package:food_delivery/widgets/app_text_field.dart';
 import 'package:food_delivery/widgets/big_text.dart';
@@ -23,12 +24,27 @@ class SignUpPage extends StatelessWidget {
       String email = emailController.text.trim();
 
       if (name.isEmpty) {
+        showCustomSnackBar("Type in your name",
+            title: "Name", backgroundColor: Colors.redAccent);
       } else if (phone.isEmpty) {
+        showCustomSnackBar("Type in your phone number",
+            title: "Phone number", backgroundColor: Colors.redAccent);
       } else if (email.isEmpty) {
+        showCustomSnackBar("Type in your email address",
+            title: "Email address", backgroundColor: Colors.redAccent);
       } else if (!GetUtils.isEmail(email)) {
+        showCustomSnackBar("Type in a valid email address",
+            title: "Valid email address", backgroundColor: Colors.redAccent);
       } else if (password.isEmpty) {
+        showCustomSnackBar("Type in your password",
+            title: "Password", backgroundColor: Colors.redAccent);
       } else if (password.length < 8) {
-      } else {}
+        showCustomSnackBar("Password can not be less than eight characters",
+            title: "Password", backgroundColor: Colors.redAccent);
+      } else {
+        showCustomSnackBar("All went well",
+            title: "Perfect", backgroundColor: Colors.greenAccent);
+      }
     }
 
     return Scaffold(

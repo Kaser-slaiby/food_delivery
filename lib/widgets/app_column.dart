@@ -5,10 +5,10 @@ import '../utils/dimensions.dart';
 import 'big_text.dart';
 import 'icon_and_text_widget.dart';
 
-class AppCloumn extends StatelessWidget {
+class AppColumn extends StatelessWidget {
   final String text;
 
-  const AppCloumn({Key? key, required this.text}) : super(key: key);
+  const AppColumn({Key? key, required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,22 +26,22 @@ class AppCloumn extends StatelessWidget {
           children: [
             Wrap(
               children: List.generate(5, (index) {
-                return Icon(
+                return const Icon(
                   Icons.star,
                   color: Colors.cyan,
                   size: 15,
                 );
               }),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             SmallText(text: "4.5"),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             SmallText(text: "1287"),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             SmallText(text: "comments"),
@@ -50,7 +50,7 @@ class AppCloumn extends StatelessWidget {
         SizedBox(
           height: Dimensions.height10,
         ),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             IconAndTextWidget(
