@@ -19,7 +19,7 @@ class SignInPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
             SizedBox(
@@ -30,7 +30,7 @@ class SignInPage extends StatelessWidget {
               child: Center(
                 child: CircleAvatar(
                   radius: Dimensions.radius20 * 5,
-                  backgroundImage: AssetImage("assets/image/logo2.png"),
+                  backgroundImage: const AssetImage("assets/image/logo2.png"),
                   backgroundColor: Colors.white,
                 ),
               ),
@@ -70,21 +70,6 @@ class SignInPage extends StatelessWidget {
             SizedBox(
               height: Dimensions.height55 / 2,
             ),
-            // Row(
-            //   children: [
-            //     Expanded(child: Container()),
-            //     RichText(
-            //       text: TextSpan(
-            //         text: "Have an account already?",
-            //         style: TextStyle(
-            //             color: Colors.grey[500], fontSize: Dimensions.font20),
-            //       ),
-            //     ),
-            //     SizedBox(
-            //       width: Dimensions.width20,
-            //     ),
-            //   ],
-            // ),
             SizedBox(
               height: Dimensions.height30,
             ),
