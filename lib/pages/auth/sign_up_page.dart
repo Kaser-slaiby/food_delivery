@@ -16,12 +16,28 @@ class SignUpPage extends StatelessWidget {
     var phoneController = TextEditingController();
     var signUpImages = ["t.png", "g.png", "f.png"];
 
-    void _registration(){
+    void _registration() {
       String name = nameController.text.trim();
       String password = passwordController.text.trim();
       String phone = phoneController.text.trim();
       String email = emailController.text.trim();
 
+
+      if (name.isEmpty) {
+
+      }else if(phone.isEmpty){
+
+      }else if (email.isEmpty){
+
+      }else if(!GetUtils.isEmail(email)){
+
+      }else if(password.isEmpty){
+
+      }else if(password.length<8){
+
+      }else{
+
+      }
     }
 
     return Scaffold(
