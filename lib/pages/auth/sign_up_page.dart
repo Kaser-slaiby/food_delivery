@@ -22,22 +22,13 @@ class SignUpPage extends StatelessWidget {
       String phone = phoneController.text.trim();
       String email = emailController.text.trim();
 
-
       if (name.isEmpty) {
-
-      }else if(phone.isEmpty){
-
-      }else if (email.isEmpty){
-
-      }else if(!GetUtils.isEmail(email)){
-
-      }else if(password.isEmpty){
-
-      }else if(password.length<8){
-
-      }else{
-
-      }
+      } else if (phone.isEmpty) {
+      } else if (email.isEmpty) {
+      } else if (!GetUtils.isEmail(email)) {
+      } else if (password.isEmpty) {
+      } else if (password.length < 8) {
+      } else {}
     }
 
     return Scaffold(
@@ -88,7 +79,9 @@ class SignUpPage extends StatelessWidget {
               height: Dimensions.height55 / 2,
             ),
             GestureDetector(
-              onTap: () {_registration();},
+              onTap: () {
+                _registration();
+              },
               child: Container(
                 width: Dimensions.screenWidth / 2.5,
                 height: Dimensions.screenHeight / 13,
@@ -141,5 +134,5 @@ class SignUpPage extends StatelessWidget {
         ),
       ),
     );
-
+  }
 }
