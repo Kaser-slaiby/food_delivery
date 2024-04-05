@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery/base/show_custom_snackbar.dart';
+import 'package:food_delivery/models/signup_body_model.dart';
 import 'package:food_delivery/utils/dimensions.dart';
 import 'package:food_delivery/widgets/app_text_field.dart';
 import 'package:food_delivery/widgets/big_text.dart';
@@ -44,6 +45,9 @@ class SignUpPage extends StatelessWidget {
       } else {
         showCustomSnackBar("All went well",
             title: "Perfect", backgroundColor: Colors.orangeAccent);
+        SignUpBody signUpBody = SignUpBody(
+            name: name, phone: phone, email: email, password: password);
+        print(signUpBody.toString());
       }
     }
 
