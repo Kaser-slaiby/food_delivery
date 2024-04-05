@@ -43,7 +43,7 @@ class SignUpPage extends StatelessWidget {
             title: "Password", backgroundColor: Colors.redAccent);
       } else {
         showCustomSnackBar("All went well",
-            title: "Perfect", backgroundColor: Colors.greenAccent);
+            title: "Perfect", backgroundColor: Colors.orangeAccent);
       }
     }
 
