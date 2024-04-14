@@ -7,6 +7,8 @@ import 'package:food_delivery/widgets/app_text_field.dart';
 import 'package:food_delivery/widgets/big_text.dart';
 import 'package:get/get.dart';
 
+import '../../controllers/auth_controller.dart';
+
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
 
@@ -19,6 +21,7 @@ class SignUpPage extends StatelessWidget {
     var signUpImages = ["t.png", "g.png", "f.png"];
 
     void _registration() {
+      var authController = Get.find<AuthController>();
       String name = nameController.text.trim();
       String password = passwordController.text.trim();
       String phone = phoneController.text.trim();
@@ -47,7 +50,13 @@ class SignUpPage extends StatelessWidget {
             title: "Perfect", backgroundColor: Colors.orangeAccent);
         SignUpBody signUpBody = SignUpBody(
             name: name, phone: phone, email: email, password: password);
-        print(signUpBody.toString());
+        authController.registration(signUpBody).then((status) {
+          if (status.isSuccess) {
+            print("Success");
+          } else {
+            showCustomSnackBar(status.message, backgroundColor: Colors.red);
+          }
+        });
       }
     }
 
