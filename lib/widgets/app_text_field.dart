@@ -19,12 +19,12 @@ class AppTextField extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(Dimensions.radius30),
+          borderRadius: BorderRadius.circular(Dimensions.radius15),
           boxShadow: [
             BoxShadow(
-              blurRadius: Dimensions.height10,
+              blurRadius: Dimensions.height5,
               spreadRadius: Dimensions.height5,
-              offset: Offset(1, 10),
+              offset: Offset(1, 1),
               color: Colors.grey.withOpacity(0.2),
             ),
           ]),
@@ -39,15 +39,15 @@ class AppTextField extends StatelessWidget {
             color: Colors.orange,
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(Dimensions.radius30),
+            borderRadius: BorderRadius.circular(Dimensions.radius15),
             borderSide: BorderSide(width: 1.0, color: Colors.white),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(Dimensions.radius30),
+            borderRadius: BorderRadius.circular(Dimensions.radius15),
             borderSide: BorderSide(width: 1.0, color: Colors.white),
           ),
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(Dimensions.radius30),
+            borderRadius: BorderRadius.circular(Dimensions.radius15),
           ),
         ),
       ),
