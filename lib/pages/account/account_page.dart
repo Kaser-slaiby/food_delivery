@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/controllers/auth_controller.dart';
+import 'package:food_delivery/controllers/cart_controller.dart';
 import 'package:food_delivery/routes/route_helper.dart';
 import 'package:food_delivery/utils/dimensions.dart';
 import 'package:food_delivery/widgets/account_widgets.dart';
@@ -96,7 +97,9 @@ class AccountPage extends StatelessWidget {
                       onTap: () {
                         if (Get.find<AuthController>().userLoggedIn()) {
                           Get.find<AuthController>().clearSharedData();
-                          Get.offNamed(RouteHelper.getInitial());
+                          Get.find<CartController>().clear();
+                          Get.find<CartController>().clearCartHistory();
+                          Get.offNamed(RouteHelper.getSignInPage());
                         } else {
                           print("Logout done");
                         }
