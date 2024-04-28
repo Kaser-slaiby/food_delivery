@@ -27,7 +27,7 @@ class AccountPage extends StatelessWidget {
           children: [
             AppIcon(
               icon: Icons.person,
-              backgroundColor: Colors.orangeAccent,
+              backgroundColor: Colors.black12,
               size: Dimensions.height15 * 10,
               iconSize: Dimensions.height45 + Dimensions.height30,
               iconColor: Colors.white,
