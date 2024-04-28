@@ -60,7 +60,7 @@ class CartHistory extends StatelessWidget {
         children: [
           Container(
             height: Dimensions.height45 * 2,
-            color: Colors.black26,
+            color: Colors.brown[50],
             width: double.maxFinite,
             padding: EdgeInsets.only(
               top: Dimensions.height20 * 3,
@@ -72,12 +72,13 @@ class CartHistory extends StatelessWidget {
               children: [
                 BigText(
                   text: "Cart History",
-                  color: Colors.white,
+                  color: Colors.grey[900],
                 ),
                 AppIcon(
                   icon: Icons.shopping_cart_outlined,
-                  iconColor: Colors.white,
-                  backgroundColor: Colors.orangeAccent,
+                  iconColor: Colors.orangeAccent,
+                  backgroundColor: Colors.white,
+                  size: Dimensions.radius15 * 3,
                 ),
               ],
             ),

@@ -11,12 +11,12 @@ class AccountPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Colors.brown[50],
         title: Center(
           child: BigText(
             text: "Profile",
             size: 20,
-            color: Colors.white,
+            color: Colors.grey[900],
           ),
         ),
       ),
@@ -39,24 +39,11 @@ class AccountPage extends StatelessWidget {
                   children: [
                     AccountWidgets(
                       bigText: BigText(
-                        text: "Kaser",
-                      ),
-                      appIcon: AppIcon(
-                        icon: Icons.person,
-                        backgroundColor: Colors.orangeAccent,
-                        size: Dimensions.height10 * 5,
-                        iconSize: Dimensions.height10 * 5 / 2,
-                        iconColor: Colors.white,
-                      ),
-                    ),
-                    SizedBox(height: Dimensions.height15),
-                    AccountWidgets(
-                      bigText: BigText(
                         text: "00000000",
                       ),
                       appIcon: AppIcon(
                         icon: Icons.phone,
-                        backgroundColor: Colors.greenAccent,
+                        backgroundColor: Colors.orangeAccent,
                         size: Dimensions.height10 * 5,
                         iconSize: Dimensions.height10 * 5 / 2,
                         iconColor: Colors.white,
@@ -69,7 +56,7 @@ class AccountPage extends StatelessWidget {
                       ),
                       appIcon: AppIcon(
                         icon: Icons.email,
-                        backgroundColor: Colors.greenAccent,
+                        backgroundColor: Colors.orangeAccent,
                         size: Dimensions.height10 * 5,
                         iconSize: Dimensions.height10 * 5 / 2,
                         iconColor: Colors.white,
@@ -104,30 +91,16 @@ class AccountPage extends StatelessWidget {
                     SizedBox(height: Dimensions.height15),
                     AccountWidgets(
                       bigText: BigText(
-                        text: "Message",
+                        text: "Logout",
                       ),
                       appIcon: AppIcon(
-                        icon: Icons.message_outlined,
+                        icon: Icons.logout,
                         backgroundColor: Colors.orangeAccent,
                         size: Dimensions.height10 * 5,
                         iconSize: Dimensions.height10 * 5 / 2,
                         iconColor: Colors.white,
                       ),
                     ),
-                    SizedBox(height: Dimensions.height15),
-                    AccountWidgets(
-                      bigText: BigText(
-                        text: "Message",
-                      ),
-                      appIcon: AppIcon(
-                        icon: Icons.message_outlined,
-                        backgroundColor: Colors.orangeAccent,
-                        size: Dimensions.height10 * 5,
-                        iconSize: Dimensions.height10 * 5 / 2,
-                        iconColor: Colors.white,
-                      ),
-                    ),
-                    SizedBox(height: Dimensions.height15),
                   ],
                 ),
               ),
