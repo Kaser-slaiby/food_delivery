@@ -31,7 +31,7 @@ class CartPage extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Get.to(() => MainFoodPage());
+                    Get.back();
                   },
                   child: AppIcon(
                     icon: Icons.arrow_back_ios,
