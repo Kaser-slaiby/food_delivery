@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
             return GetMaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Flutter Demo',
-              // home:SplashScreen() ,
+              // home: SplashScreen(),
               initialRoute: RouteHelper.getSplashPage(),
               getPages: RouteHelper.routes,
             );
