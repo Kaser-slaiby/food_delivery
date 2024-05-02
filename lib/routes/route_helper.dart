@@ -40,7 +40,7 @@ class RouteHelper {
         page: () {
           return SignInPage();
         },
-        transition: Transition.topLevel),
+        transition: Transition.rightToLeft),
     GetPage(
         name: popularFood,
         page: () {

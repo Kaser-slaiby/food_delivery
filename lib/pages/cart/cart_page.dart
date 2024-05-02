@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/base/no_data_page.dart';
 import 'package:food_delivery/controllers/auth_controller.dart';
-import 'package:food_delivery/pages/home/main_food_page.dart';
 import 'package:food_delivery/utils/dimensions.dart';
 import 'package:food_delivery/widgets/app_icon.dart';
 import 'package:food_delivery/widgets/big_text.dart';
@@ -301,7 +300,7 @@ class CartPage extends StatelessWidget {
                               print("Tapped");
                               cartController.addToHistory();
                             } else {
-                              Get.toNamed(RouteHelper.sigIn);
+                              Get.toNamed(RouteHelper.getSignInPage());
                             }
                             ;
                           },
