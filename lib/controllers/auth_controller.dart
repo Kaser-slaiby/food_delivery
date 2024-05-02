@@ -23,7 +23,7 @@ class AuthController extends GetxController implements GetxService {
     } else {
       responseModel = ResponseModel(false, response.statusText!);
     }
-    _isLoading = true;
+    _isLoading = false;
     update();
     return responseModel;
   }
@@ -31,10 +31,9 @@ class AuthController extends GetxController implements GetxService {
   Future<ResponseModel> login(String email, String password) async {
     print("Getting token");
     print(authRepo.getUserToken().toString());
-    authRepo.getUserToken();
+    // authRepo.getUserToken();
     _isLoading = true;
     update();
-
     Response response = await authRepo.login(email, password);
     late ResponseModel responseModel;
     if (response.statusCode == 200) {
@@ -43,9 +42,10 @@ class AuthController extends GetxController implements GetxService {
       print(response.body["token"].toString());
       responseModel = ResponseModel(true, response.body["token"]);
     } else {
+      print("Backend not token");
       responseModel = ResponseModel(false, response.statusText!);
     }
-    _isLoading = true;
+    _isLoading = false;
     update();
     return responseModel;
   }
