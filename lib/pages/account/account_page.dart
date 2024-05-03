@@ -35,7 +35,7 @@ class AccountPage extends StatelessWidget {
         body: GetBuilder<UserController>(
           builder: (userController) {
             return _userLoggedIn
-                ? (userController.isLoading
+                ? (!userController.isLoading
                     ? Container(
                         width: double.maxFinite,
                         margin: EdgeInsets.only(top: Dimensions.height20),
