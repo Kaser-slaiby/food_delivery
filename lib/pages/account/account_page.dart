@@ -23,19 +23,18 @@ class AccountPage extends StatelessWidget {
     }
     return Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           backgroundColor: Colors.brown[50],
-          title: Center(
-            child: BigText(
-              text: "Profile",
-              size: 20,
-              color: Colors.grey[900],
-            ),
+          title: BigText(
+            text: "Profile",
+            size: 20,
+            color: Colors.grey[900],
           ),
         ),
         body: GetBuilder<UserController>(
           builder: (userController) {
             return _userLoggedIn
-                ? (!userController.isLoading
+                ? (userController.isLoading
                     ? Container(
                         width: double.maxFinite,
                         margin: EdgeInsets.only(top: Dimensions.height20),
@@ -56,10 +55,10 @@ class AccountPage extends StatelessWidget {
                                   children: [
                                     AccountWidgets(
                                       bigText: BigText(
-                                        text: "00000000",
+                                        text: userController.userModel.name,
                                       ),
                                       appIcon: AppIcon(
-                                        icon: Icons.phone,
+                                        icon: Icons.person,
                                         backgroundColor: Colors.orangeAccent,
                                         size: Dimensions.height10 * 5,
                                         iconSize: Dimensions.height10 * 5 / 2,
@@ -69,10 +68,23 @@ class AccountPage extends StatelessWidget {
                                     SizedBox(height: Dimensions.height15),
                                     AccountWidgets(
                                       bigText: BigText(
-                                        text: "www@gmail.com",
+                                        text: userController.userModel.email,
                                       ),
                                       appIcon: AppIcon(
                                         icon: Icons.email,
+                                        backgroundColor: Colors.orangeAccent,
+                                        size: Dimensions.height10 * 5,
+                                        iconSize: Dimensions.height10 * 5 / 2,
+                                        iconColor: Colors.white,
+                                      ),
+                                    ),
+                                    SizedBox(height: Dimensions.height15),
+                                    AccountWidgets(
+                                      bigText: BigText(
+                                        text: userController.userModel.phone,
+                                      ),
+                                      appIcon: AppIcon(
+                                        icon: Icons.phone,
                                         backgroundColor: Colors.orangeAccent,
                                         size: Dimensions.height10 * 5,
                                         iconSize: Dimensions.height10 * 5 / 2,
@@ -127,7 +139,7 @@ class AccountPage extends StatelessWidget {
                                         ),
                                         appIcon: AppIcon(
                                           icon: Icons.logout,
-                                          backgroundColor: Colors.orangeAccent,
+                                          backgroundColor: Colors.redAccent,
                                           size: Dimensions.height10 * 5,
                                           iconSize: Dimensions.height10 * 5 / 2,
                                           iconColor: Colors.white,
