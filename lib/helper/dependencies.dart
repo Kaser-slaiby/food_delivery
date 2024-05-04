@@ -15,10 +15,11 @@ import '../data/repository/recommended_product_repo.dart';
 import '../data/repository/user_repo.dart';
 
 Future<void> init() async {
-  final sharedpreferences = await SharedPreferences.getInstance();
-  Get.lazyPut(() => sharedpreferences);
+  final sharedPreferences = await SharedPreferences.getInstance();
+  Get.lazyPut(() => sharedPreferences);
   //api client
-  Get.lazyPut(() => ApiClient(appBaseUrl: AppConstants.BASE_URL));
+  Get.lazyPut(() => ApiClient(
+      appBaseUrl: AppConstants.BASE_URL, sharedPreferences: Get.find()));
   Get.lazyPut(() => UserRepo(apiClient: Get.find()));
   Get.lazyPut(() => PopularProductRepo(apiClient: Get.find()));
   Get.lazyPut(() => RecommendedProductRepo(apiClient: Get.find()));
