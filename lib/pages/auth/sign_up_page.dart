@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/base/custom_loader.dart';
 import 'package:food_delivery/base/show_custom_snackbar.dart';
 import 'package:food_delivery/models/signup_body_model.dart';
+import 'package:food_delivery/routes/route_helper.dart';
 import 'package:food_delivery/utils/dimensions.dart';
 import 'package:food_delivery/widgets/app_text_field.dart';
 import 'package:food_delivery/widgets/big_text.dart';
@@ -53,6 +54,7 @@ class SignUpPage extends StatelessWidget {
             name: name, phone: phone, email: email, password: password);
         authController.registration(signUpBody).then((status) {
           if (status.isSuccess) {
+            Get.offNamed(RouteHelper.getInitial());
             print("Success");
           } else {
             showCustomSnackBar(status.message, backgroundColor: Colors.red);
