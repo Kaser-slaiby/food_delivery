@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
     _loadResource();
     controller =
-        AnimationController(vsync: this, duration: const Duration(seconds: 2))
+        AnimationController(vsync: this, duration: const Duration(seconds: 1))
           ..forward();
     animation = CurvedAnimation(parent: controller, curve: Curves.easeInExpo);
 
@@ -42,55 +42,44 @@ class _SplashScreenState extends State<SplashScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
-        color: Colors.grey[300],
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: Dimensions.height15 * 13,
-                  child: ScaleTransition(
-                    scale: animation,
-                    child: Center(
-                      child: Image.asset(
-                        "assets/image/logo2.png",
-                        width: Dimensions.splashImg,
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  width: Dimensions.height15 * 13,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: Dimensions.width15 * 12,
+                child: ScaleTransition(
+                  alignment: Alignment.topRight,
+                  scale: animation,
                   child: Center(
                     child: Image.asset(
-                      "assets/image/logo1.png",
+                      "assets/image/icon.png",
                       width: Dimensions.splashImg,
                     ),
                   ),
                 ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: Dimensions.width45 * 4,
-                  child: ScaleTransition(
-                    scale: animation,
-                    child: Image.asset(
-                      fit: BoxFit.contain,
-                      "assets/image/logo3.png",
-                      // width: Dimensions.splashImg,
-                    ),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: Dimensions.width45 * 4,
+                child: ScaleTransition(
+                  scale: animation,
+                  child: Image.asset(
+                    fit: BoxFit.contain,
+                    "assets/image/logo3.png",
+                    // width: Dimensions.splashImg,
                   ),
                 ),
-              ],
-            ),
-          ],
-        ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

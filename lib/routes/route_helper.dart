@@ -15,6 +15,11 @@ class RouteHelper {
   static const String cartPage = "/cart-page";
   static const String sigIn = "/sign-in";
 
+  static const String addAddress = "/add-address";
+
+  static const String payment = "/payment";
+  static const String orderSuccess = "/order-success";
+
   static String getSplashPage() => '$splashPage';
 
   static String getInitial() => '$initial';
@@ -27,6 +32,10 @@ class RouteHelper {
 
   static String getCartPage() => '$cartPage';
   static String getSignInPage() => '$sigIn';
+  static String getAddressPage() => '$addAddress';
+  static String getPaymentPage(String id, int userID) =>
+      '$payment?id=$id&userID$userID';
+  static String getOrderSuccessPage() => '$orderSuccess';
 
   static List<GetPage> routes = [
     GetPage(name: splashPage, page: () => SplashScreen()),
@@ -72,5 +81,20 @@ class RouteHelper {
           return CartPage();
         },
         transition: Transition.fadeIn),
+    // GetPage(
+    //   name: addAddress,
+    //   page: () {
+    //     return AddAddressPage();
+    //   },
+    // ),
+    // GetPage(
+    //   name: payment,
+    //   page: () => PaymentPage(
+    //     orderModel: OrderModel(
+    //       id: int.parse(Get.parameters['id']!),
+    //       userId: int.parse(Get.parameters['userID']!),
+    //     ),
+    //   ),
+    // ),
   ];
 }

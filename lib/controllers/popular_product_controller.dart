@@ -18,8 +18,10 @@ class PopularProductController extends GetxController {
   late CartController _cart;
 
   bool _isLoaded = false;
+  bool _shimmer = false;
 
   bool get isLoaded => _isLoaded;
+  bool get shimmer => _shimmer;
 
   int _quantity = 0;
 

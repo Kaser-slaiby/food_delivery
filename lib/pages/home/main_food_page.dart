@@ -58,19 +58,34 @@ class _MainFoodPageState extends State<MainFoodPage> {
                         Container(
                           width: Dimensions.width45,
                           height: Dimensions.height45,
-                          child: Icon(Icons.search, color: Colors.white),
+                          child: Icon(Icons.shopping_cart_outlined,
+                              color: Colors.orangeAccent),
                           decoration: BoxDecoration(
                             borderRadius:
                                 BorderRadius.circular(Dimensions.radius15),
-                            color: Colors.black26,
+                            color: Colors.brown[50],
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
                 )
               ],
             ),
+            Padding(
+              padding: EdgeInsets.all(Dimensions.height20),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Search for food',
+                  prefixIcon: Icon(Icons.search),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.orangeAccent),
+                    borderRadius: BorderRadius.circular(Dimensions.radius15),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: Dimensions.height5),
             Expanded(
               child: SingleChildScrollView(
                 child: FoodPageBody(),

@@ -17,11 +17,11 @@ class CustomLoader extends StatelessWidget {
         width: Dimensions.height30 * 2,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(Dimensions.height45),
-          color: Colors.orangeAccent,
+          color: Colors.brown[50],
         ),
         alignment: Alignment.center,
         child: CircularProgressIndicator(
-          color: Colors.white,
+          color: Colors.orangeAccent[200],
         ),
       ),
     );

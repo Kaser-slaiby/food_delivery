@@ -18,9 +18,9 @@ class _HomePageState extends State<HomePage> {
 
   List pages = [
     MainFoodPage(),
-    Container(
-      child: Text("History page"),
-    ),
+    // Container(
+    //   child: Text("History page"),
+    // ),
     CartHistory(),
     AccountPage(),
   ];
@@ -39,14 +39,14 @@ class _HomePageState extends State<HomePage> {
         iconSize: 26.0,
         selectedItemColor: Colors.orange,
         unselectedItemColor: Colors.brown[200],
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
         currentIndex: _selectedIndex,
         onTap: onTapNav,
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.home_outlined), label: "home"),
-          BottomNavigationBarItem(icon: Icon(Icons.archive), label: "history"),
+          // BottomNavigationBarItem(icon: Icon(Icons.archive), label: "history"),
           BottomNavigationBarItem(
               icon: Icon(Icons.shopping_cart), label: "cart"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "me"),

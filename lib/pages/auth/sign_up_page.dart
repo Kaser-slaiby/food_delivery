@@ -64,6 +64,15 @@ class SignUpPage extends StatelessWidget {
     }
 
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.brown[50],
+        title: BigText(
+          text: "",
+          size: 20,
+          color: Colors.grey[900],
+        ),
+      ),
       backgroundColor: Colors.white,
       body: GetBuilder<AuthController>(
         builder: (_authController) {
@@ -72,16 +81,16 @@ class SignUpPage extends StatelessWidget {
                   physics: BouncingScrollPhysics(),
                   child: Column(
                     children: [
-                      SizedBox(
-                        height: Dimensions.screenHeight * 0.05,
-                      ),
+                      // SizedBox(
+                      //   height: Dimensions.screenHeight * 0.05,
+                      // ),
                       Container(
-                        height: Dimensions.screenHeight * 0.30,
+                        height: Dimensions.screenHeight * 0.25,
                         child: Center(
                           child: CircleAvatar(
                             radius: Dimensions.radius20 * 5,
                             backgroundImage:
-                                AssetImage("assets/image/logo2.png"),
+                                AssetImage("assets/image/icon.png"),
                             backgroundColor: Colors.white,
                           ),
                         ),

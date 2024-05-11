@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery/base/custom_loader.dart';
 import 'package:food_delivery/controllers/auth_controller.dart';
@@ -36,17 +37,20 @@ class AccountPage extends StatelessWidget {
             return _userLoggedIn
                 ? (userController.isLoading
                     ? Container(
+                        color: Colors.white,
                         width: double.maxFinite,
-                        margin: EdgeInsets.only(top: Dimensions.height20),
                         child: Column(
                           children: [
-                            AppIcon(
-                              icon: Icons.person,
-                              backgroundColor: Colors.black12,
-                              size: Dimensions.height15 * 10,
-                              iconSize:
-                                  Dimensions.height45 + Dimensions.height30,
-                              iconColor: Colors.white,
+                            Container(
+                              width: Dimensions.width45 * 244,
+                              height: Dimensions.height15 * 14,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(
+                                      Dimensions.radius20),
+                                  image: DecorationImage(
+                                      // fit: BoxFit.cover,
+                                      image: AssetImage(
+                                          "assets/image/loginnn.png"))),
                             ),
                             SizedBox(height: Dimensions.height30),
                             Expanded(
@@ -85,19 +89,6 @@ class AccountPage extends StatelessWidget {
                                       ),
                                       appIcon: AppIcon(
                                         icon: Icons.phone,
-                                        backgroundColor: Colors.orangeAccent,
-                                        size: Dimensions.height10 * 5,
-                                        iconSize: Dimensions.height10 * 5 / 2,
-                                        iconColor: Colors.white,
-                                      ),
-                                    ),
-                                    SizedBox(height: Dimensions.height15),
-                                    AccountWidgets(
-                                      bigText: BigText(
-                                        text: "Fill in your address",
-                                      ),
-                                      appIcon: AppIcon(
-                                        icon: Icons.location_on,
                                         backgroundColor: Colors.orangeAccent,
                                         size: Dimensions.height10 * 5,
                                         iconSize: Dimensions.height10 * 5 / 2,
@@ -155,8 +146,72 @@ class AccountPage extends StatelessWidget {
                       )
                     : CustomLoader())
                 : Container(
-                    child: Center(
-                      child: Text("You must login"),
+                    color: Colors.white,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: double.maxFinite,
+                              height: Dimensions.height55 * 7,
+                              margin: EdgeInsets.only(
+                                  left: Dimensions.width20,
+                                  right: Dimensions.width20),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(
+                                      Dimensions.radius20),
+                                  image: DecorationImage(
+                                      // fit: BoxFit.cover,
+                                      image: AssetImage(
+                                          "assets/image/loginn.png"))),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: Dimensions.height55 * 3,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                Get.toNamed(RouteHelper.getSignInPage());
+                              },
+                              child: Container(
+                                width: double.maxFinite,
+                                height: Dimensions.height30 * 2,
+                                margin: EdgeInsets.only(
+                                    left: Dimensions.width20,
+                                    right: Dimensions.width20),
+                                decoration: BoxDecoration(
+                                  color: Colors.brown[50],
+                                  borderRadius: BorderRadius.circular(
+                                      Dimensions.radius15),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    BigText(
+                                      text: "You need to log in",
+                                      color: Colors.black54,
+                                      size: Dimensions.font26,
+                                    ),
+                                    SizedBox(width: Dimensions.width5 * 2),
+                                    AppIcon(
+                                      icon: Icons.login_sharp,
+                                      iconColor: Colors.greenAccent,
+                                      backgroundColor: Colors.white,
+                                      size: Dimensions.radius30,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   );
           },
