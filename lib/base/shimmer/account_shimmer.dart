@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 
 import '../../utils/dimensions.dart';
 import '../../widgets/account_widgets.dart';
@@ -22,85 +23,170 @@ class _AccountShimmerState extends State<AccountShimmer> {
       width: double.maxFinite,
       child: Column(
         children: [
+          SizedBox(height: Dimensions.height30),
           Container(
-            width: Dimensions.width45 * 244,
-            height: Dimensions.height15 * 14,
+            width: Dimensions.width45 * 24,
+            height: Dimensions.height15 * 12,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.radius20),
                 image: DecorationImage(
                     // fit: BoxFit.cover,
-                    image: AssetImage("assets/image/loginnn.png"))),
+                    image: AssetImage("assets/image/loginn.png"))),
           ),
-          SizedBox(height: Dimensions.height30),
+          SizedBox(height: Dimensions.height45),
           Expanded(
             child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  AccountWidgets(
-                    bigText: BigText(
-                      text: "userController.userModel.name",
+              child: Container(
+                margin: EdgeInsets.only(
+                    left: Dimensions.width10, right: Dimensions.width10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: Dimensions.height10,
                     ),
-                    appIcon: AppIcon(
-                      icon: Icons.person,
-                      backgroundColor: Colors.orangeAccent,
-                      size: Dimensions.height10 * 5,
-                      iconSize: Dimensions.height10 * 5 / 2,
-                      iconColor: Colors.white,
+                    Shimmer.fromColors(
+                        baseColor: Colors.brown[50]!,
+                        highlightColor: Colors.orange[200]!,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.orange[200]!,
+                              borderRadius:
+                                  BorderRadius.circular(Dimensions.radius15)),
+                          height: Dimensions.height15 * 4,
+                          width: Dimensions.width45 * 4,
+                        )),
+                    SizedBox(
+                      height: Dimensions.height10,
                     ),
-                  ),
-                  SizedBox(height: Dimensions.height15),
-                  AccountWidgets(
-                    bigText: BigText(
-                      text: "userController.userModel.email",
+                    Shimmer.fromColors(
+                        baseColor: Colors.brown[50]!,
+                        highlightColor: Colors.orange[200]!,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.orange[200]!,
+                              borderRadius:
+                                  BorderRadius.circular(Dimensions.radius15)),
+                          height: Dimensions.height10,
+                          width: Dimensions.screenWidth,
+                        )),
+                    SizedBox(
+                      height: Dimensions.height10,
                     ),
-                    appIcon: AppIcon(
-                      icon: Icons.email,
-                      backgroundColor: Colors.orangeAccent,
-                      size: Dimensions.height10 * 5,
-                      iconSize: Dimensions.height10 * 5 / 2,
-                      iconColor: Colors.white,
+                    Shimmer.fromColors(
+                        baseColor: Colors.brown[50]!,
+                        highlightColor: Colors.orange[200]!,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.orange[200]!,
+                              borderRadius:
+                                  BorderRadius.circular(Dimensions.radius15)),
+                          height: Dimensions.height15 * 4,
+                          width: Dimensions.width45 * 3,
+                        )),
+                    SizedBox(
+                      height: Dimensions.height10,
                     ),
-                  ),
-                  SizedBox(height: Dimensions.height15),
-                  AccountWidgets(
-                    bigText: BigText(
-                      text: "userController.userModel.phone",
+                    Shimmer.fromColors(
+                        baseColor: Colors.brown[50]!,
+                        highlightColor: Colors.orange[200]!,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.orange[200]!,
+                              borderRadius:
+                                  BorderRadius.circular(Dimensions.radius15)),
+                          height: Dimensions.height10,
+                          width: Dimensions.screenWidth,
+                        )),
+                    SizedBox(
+                      height: Dimensions.height10,
                     ),
-                    appIcon: AppIcon(
-                      icon: Icons.phone,
-                      backgroundColor: Colors.orangeAccent,
-                      size: Dimensions.height10 * 5,
-                      iconSize: Dimensions.height10 * 5 / 2,
-                      iconColor: Colors.white,
+                    Shimmer.fromColors(
+                        baseColor: Colors.brown[50]!,
+                        highlightColor: Colors.orange[200]!,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.orange[200]!,
+                              borderRadius:
+                                  BorderRadius.circular(Dimensions.radius15)),
+                          height: Dimensions.height15 * 4,
+                          width: Dimensions.width45 * 3.5,
+                        )),
+                    SizedBox(
+                      height: Dimensions.height10,
                     ),
-                  ),
-                  SizedBox(height: Dimensions.height15),
-                  AccountWidgets(
-                    bigText: BigText(
-                      text: "Message",
+                    Shimmer.fromColors(
+                        baseColor: Colors.brown[50]!,
+                        highlightColor: Colors.orange[200]!,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.orange[200]!,
+                              borderRadius:
+                                  BorderRadius.circular(Dimensions.radius15)),
+                          height: Dimensions.height10,
+                          width: Dimensions.screenWidth,
+                        )),
+                    SizedBox(
+                      height: Dimensions.height10,
                     ),
-                    appIcon: AppIcon(
-                      icon: Icons.message_outlined,
-                      backgroundColor: Colors.orangeAccent,
-                      size: Dimensions.height10 * 5,
-                      iconSize: Dimensions.height10 * 5 / 2,
-                      iconColor: Colors.white,
+                    Shimmer.fromColors(
+                        baseColor: Colors.brown[50]!,
+                        highlightColor: Colors.orange[200]!,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.orange[200]!,
+                              borderRadius:
+                                  BorderRadius.circular(Dimensions.radius15)),
+                          height: Dimensions.height15 * 4,
+                          width: Dimensions.width45 * 5,
+                        )),
+                    SizedBox(
+                      height: Dimensions.height10,
                     ),
-                  ),
-                  SizedBox(height: Dimensions.height15),
-                  AccountWidgets(
-                    bigText: BigText(
-                      text: "Logout",
+                    Shimmer.fromColors(
+                        baseColor: Colors.brown[50]!,
+                        highlightColor: Colors.orange[200]!,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.orange[200]!,
+                              borderRadius:
+                                  BorderRadius.circular(Dimensions.radius15)),
+                          height: Dimensions.height10,
+                          width: Dimensions.screenWidth,
+                        )),
+                    SizedBox(
+                      height: Dimensions.height10,
                     ),
-                    appIcon: AppIcon(
-                      icon: Icons.logout,
-                      backgroundColor: Colors.redAccent,
-                      size: Dimensions.height10 * 5,
-                      iconSize: Dimensions.height10 * 5 / 2,
-                      iconColor: Colors.white,
+                    Shimmer.fromColors(
+                        baseColor: Colors.brown[50]!,
+                        highlightColor: Colors.orange[200]!,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.orange[200]!,
+                              borderRadius:
+                                  BorderRadius.circular(Dimensions.radius15)),
+                          height: Dimensions.height15 * 4,
+                          width: Dimensions.width45 * 3,
+                        )),
+                    SizedBox(
+                      height: Dimensions.height10,
                     ),
-                  ),
-                ],
+                    Shimmer.fromColors(
+                        baseColor: Colors.brown[50]!,
+                        highlightColor: Colors.orange[200]!,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.orange[200]!,
+                              borderRadius:
+                                  BorderRadius.circular(Dimensions.radius15)),
+                          height: Dimensions.height10,
+                          width: Dimensions.screenWidth,
+                        )),
+                    SizedBox(
+                      height: Dimensions.height15,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

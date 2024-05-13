@@ -160,8 +160,8 @@ class PopularFoodDetail extends StatelessWidget {
               padding: EdgeInsets.only(
                 top: Dimensions.height5,
                 bottom: Dimensions.height5,
-                right: Dimensions.width30,
-                left: Dimensions.width30,
+                right: Dimensions.width15,
+                left: Dimensions.width15,
               ),
               decoration: BoxDecoration(
                 color: Color(0xFFECEFF1),
@@ -174,12 +174,6 @@ class PopularFoodDetail extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    padding: EdgeInsets.only(
-                      top: Dimensions.height5,
-                      bottom: Dimensions.height5,
-                      left: Dimensions.width15,
-                      right: Dimensions.width15,
-                    ),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(
@@ -189,8 +183,18 @@ class PopularFoodDetail extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        GestureDetector(
-                          onTap: () {
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                            minimumSize: Size(Dimensions.width5,
+                                Dimensions.height5), // Make it responsive
+                            padding: EdgeInsets.symmetric(horizontal: 16),
+                            textStyle: TextStyle(fontSize: 14),
+                          ),
+                          onPressed: () {
                             popularProduct.setQuantity(false);
                           },
                           child: Icon(
@@ -200,11 +204,16 @@ class PopularFoodDetail extends StatelessWidget {
                         BigText(
                           text: popularProduct.inCartItems.toString(),
                         ),
-                        GestureDetector(
-                          onTap: () {
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            foregroundColor: Colors.orangeAccent,
+                            backgroundColor: Colors.white,
+                          ),
+                          onPressed: () {
                             popularProduct.setQuantity(true);
                           },
                           child: Icon(
+                            color: Colors.black,
                             Icons.add,
                           ),
                         ),
@@ -234,16 +243,20 @@ class PopularFoodDetail extends StatelessWidget {
                   //   ),
                   // ),
                   ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.orangeAccent,
+                      backgroundColor: Colors.white,
+                    ),
                     onPressed: () {
                       popularProduct.addItems(product);
                     },
                     child: Container(
-                      padding: EdgeInsets.only(
-                        top: Dimensions.height5,
-                        bottom: Dimensions.height5,
-                        left: Dimensions.width5,
-                        right: Dimensions.width5,
-                      ),
+                      // padding: EdgeInsets.only(
+                      //   top: Dimensions.height5,
+                      //   bottom: Dimensions.height5,
+                      //   left: Dimensions.width5,
+                      //   right: Dimensions.width5,
+                      // ),
                       child: BigText(
                         text: "\$ ${product.price!} | Add To Cart",
                       ),

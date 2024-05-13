@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery/base/custom_loader.dart';
+import 'package:food_delivery/base/shimmer/account_shimmer.dart';
 import 'package:food_delivery/controllers/auth_controller.dart';
 import 'package:food_delivery/controllers/user_controller.dart';
 import 'package:food_delivery/widgets/big_text.dart';
@@ -144,7 +145,7 @@ class AccountPage extends StatelessWidget {
                           ],
                         ),
                       )
-                    : CustomLoader())
+                    : AccountShimmer())
                 : Container(
                     color: Colors.white,
                     child: Column(
