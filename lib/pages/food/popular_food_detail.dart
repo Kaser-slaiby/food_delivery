@@ -60,7 +60,10 @@ class PopularFoodDetail extends StatelessWidget {
                           Get.toNamed(RouteHelper.getInitial());
                         }
                       },
-                      child: AppIcon(icon: Icons.arrow_back_ios)),
+                      child: AppIcon(
+                        icon: Icons.arrow_back_ios,
+                        size: Dimensions.radius15 * 3.5,
+                      )),
                   GetBuilder<PopularProductController>(builder: (controller) {
                     return GestureDetector(
                       onTap: () {
@@ -73,7 +76,7 @@ class PopularFoodDetail extends StatelessWidget {
                         children: [
                           AppIcon(
                             icon: Icons.shopping_cart_outlined,
-                            size: 35,
+                            size: Dimensions.radius15 * 3.5,
                             iconSize: 22,
                           ),
                           controller.totalItems >= 1
@@ -82,9 +85,9 @@ class PopularFoodDetail extends StatelessWidget {
                                   top: 0,
                                   child: AppIcon(
                                     icon: Icons.circle,
-                                    size: 16,
+                                    size: Dimensions.radius15 * 1.6,
                                     iconColor: Colors.transparent,
-                                    backgroundColor: Colors.tealAccent,
+                                    backgroundColor: Colors.orangeAccent,
                                   ),
                                 )
                               : Container(),
@@ -175,39 +178,55 @@ class PopularFoodDetail extends StatelessWidget {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      // color: Colors.white,
                       borderRadius: BorderRadius.circular(
                         Dimensions.radius15,
                       ),
                     ),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
+                            foregroundColor: Colors.orangeAccent,
                             backgroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25),
-                            ),
-                            minimumSize: Size(Dimensions.width5,
-                                Dimensions.height5), // Make it responsive
-                            padding: EdgeInsets.symmetric(horizontal: 16),
-                            textStyle: TextStyle(fontSize: 14),
+                            // shape: RoundedRectangleBorder(
+                            //   borderRadius:
+                            //       BorderRadius.circular(Dimensions.radius30),
+                            // ),
+                            fixedSize: Size(Dimensions.width10,
+                                Dimensions.height10), // Make it responsive
+                            padding: EdgeInsets.symmetric(
+                                horizontal: Dimensions.height5),
+                            // textStyle: TextStyle(fontSize: 20),
                           ),
                           onPressed: () {
                             popularProduct.setQuantity(false);
                           },
                           child: Icon(
+                            color: Colors.black,
                             Icons.remove,
                           ),
                         ),
+                        SizedBox(
+                          width: Dimensions.width5,
+                        ),
                         BigText(
                           text: popularProduct.inCartItems.toString(),
+                          color: Colors.black,
+                        ),
+                        SizedBox(
+                          width: Dimensions.width5,
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             foregroundColor: Colors.orangeAccent,
                             backgroundColor: Colors.white,
+                            fixedSize:
+                                Size(Dimensions.width10, Dimensions.height10),
+                            padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    Dimensions.height5), // Make it responsive
                           ),
                           onPressed: () {
                             popularProduct.setQuantity(true);
