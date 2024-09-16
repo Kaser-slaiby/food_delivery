@@ -21,3 +21,6 @@ Android toolchain - develop for Android devices (Android SDK version 34.0.0)
 • Java binary at: C:\Program Files\Android\Android Studio\jbr\bin\java
 • Java version OpenJDK Runtime Environment (build 17.0.6+0-b2043.56-10027231)
 • All Android licenses accepted.
+
+ Test
+ Test
