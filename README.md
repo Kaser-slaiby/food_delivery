@@ -23,4 +23,3 @@ Android toolchain - develop for Android devices (Android SDK version 34.0.0)
 • All Android licenses accepted.
 
  Test
- Test
